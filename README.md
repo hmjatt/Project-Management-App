@@ -5,10 +5,10 @@ An Application that let's you organize your Projects, Tasks and set their proior
 
 
 
-<!-- ![This is an image](https://raw.githubusercontent.com/hmjatt/hmjatt.github.io/master/images/Restaurant-Page-1.png) -->
+<!-- ![This is an image]() -->
 
 
-<!-- [Live Preview](https://hmjatt.github.io/Restaurant-Page/) -->
+<!-- [Live Preview]() -->
 
 
 
