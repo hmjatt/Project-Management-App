@@ -53,6 +53,11 @@ Run Dev Server (Port 5500)
     - [Article](https://www.theodinproject.com/lessons/node-path-javascript-todo-list)
     - [OOP Principles](https://www.theodinproject.com/lessons/node-path-javascript-oop-principles)
 
+4. YouTube 
+    - [Video From Web Dev Simplified](https://www.youtube.com/watch?v=W7FaYfuwu70)
+    - [Code For the Video](https://github.com/kevin-powell/todo-list-collab/tree/master/javascript-finished)
+
+
 
 
 
