@@ -21,6 +21,16 @@ An Application that let's you organize your Projects, Tasks and set their proior
 <a href="https://webpack.js.org/" target="_blank" rel="noreferrer"> <img style="margin-top:40px;" src="https://raw.githubusercontent.com/webpack/media/master/logo/logo-on-dark-bg.svg" alt="webpack" width="180" height="100"/> </a>  &emsp;   <a href="https://www.npmjs.com/" target="_blank" rel="noreferrer"> <img style="margin-top:20px;" src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" alt="npm" width="120" height="70"/> </a>
 
 
+<!-- ## Includes the following features
+
+    - Babel Loader
+    - Sass Loader With Dart Sass
+    - HTMLWebpackPlugin
+    - WebpackDevServer
+    - Asset Resource Loader
+    - Source Maps
+    - Caching -->
+
 
 ## Usage
 
@@ -45,6 +55,8 @@ Run Dev Server (Port 5500)
 3. The Odin Project
     - [Article](https://www.theodinproject.com/lessons/node-path-javascript-todo-list)
     - [OOP Principles](https://www.theodinproject.com/lessons/node-path-javascript-oop-principles)
+
+
 
 
 
