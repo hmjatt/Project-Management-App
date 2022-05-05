@@ -23,9 +23,7 @@ An Application that let's you organize your Projects, Tasks and set their proior
 
 <!-- ## Includes the following features
 
-    - Sass Loader With Dart Sass
-    - HTMLWebpackPlugin
-    - WebpackDevServer
+    - Css Loader
     - Asset Resource Loader
     - Source Maps
     - Caching -->
