@@ -1,3 +1,9 @@
+html {
+    
+}
+
 body {
-    background-color: gray;
+    background: url('../images/git-logo.png');
+    background-repeat: no-repeat;
+    z-index: 10;
 }
