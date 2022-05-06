@@ -1,57 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Management App</title>
-    <meta name="author" content="Harmeet Matharoo">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="icon" sizes="32x32" href="../src/images/svg/list-tab.svg">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Management App</title>
+  <meta name="author" content="Harmeet Matharoo">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="icon" sizes="32x32" href="../src/images/svg/list-tab.svg">
 </head>
+
 <body>
 
-    
-        <nav role="navigation">
-            <div id="menuToggle"> 
-              <!--
+
+  <nav role="navigation">
+    <div id="menuToggle">
+      <!--
               hidden checkbox is used as click reciever,
               so you can use the :checked selector on it.
               -->
-              <input name="toggle" type="checkbox" />
-              <label for="toggle">
-                <span>menu</span>
-                <!--
+      <input name="toggle" type="checkbox" />
+      <label for="toggle">
+        <span>menu</span>
+        <!--
                 divs to be styled as a hamburger button
                 -->
-                <div></div>
-                <div></div>
-                <div></div>
-                
-              </label>
-          
-              
-              <!--
+        <div></div>
+        <div></div>
+        <div></div>
+
+      </label>
+
+
+      <!--
               the menu that will slide in from the left
               -->
-              <ul id="menu">
-                
-                <h1 class="task-list-title">Projects</h1>
-                <li class="list-name active-list"> <img class="list-img" src="../src/images/svg/list.svg" alt="list"> Youtube</li>
-                <li class="list-name"> <img class="list-img" src="../src/images/svg/list.svg" alt="list"> Work</li>
-                <li class="list-name"> <img class="list-img" src="../src/images/svg/list.svg" alt="list"> Grocery</li>
-              </ul>
+      <ul id="menu">
+        <div id="form1" style="display:none">
+          <form id="formirri" method="post" action="" target="_parent">
+            <br /><br />
+            <div id="demo">
+              <table width="230px" align="center" style="box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 100);">
+                <tr>
+                  <td colspan=1></td>
+                </tr>
+                <tr>
+                  <td><a href="#" class="close-classic"></a></td>
+                </tr>
+              </table>
+
             </div>
-          </nav>
+          </form>
+        </div>
+        <h1 class="task-list-title">Projects</h1>
+        <li class="list-name active-list"> <img class="list-img" src="../src/images/svg/list.svg" alt="list"> Youtube
+        </li>
+        <li class="list-name"> <img class="list-img" src="../src/images/svg/list.svg" alt="list"> Work</li>
+        <li class="list-name"> <img class="list-img" src="../src/images/svg/list.svg" alt="list"> Grocery</li>
+      </ul>
+    </div>
+  </nav>
 
-    
 
 
 
 
-    <!-- <h1 class="title">Stuff I need to do</h1>
+
+  <!-- <h1 class="title">Stuff I need to do</h1>
 
     <div class="all-tasks">
       <h2 class="task-list-title">My lists</h2>
@@ -72,7 +90,7 @@
       </form>
     </div> -->
 
-    <!-- <div class="todo-list">
+  <!-- <div class="todo-list">
       <div class="todo-header">
         <h2 class="list-title">YouTube</h2>
         <p class="task-count">3 tasks remaining</p>
@@ -136,8 +154,9 @@
       </div>
     </div> -->
 
-   
-    </div>
-    <script src="bundle.js"></script>
+
+  </div>
+  <script src="bundle.js"></script>
 </body>
+
 </html>
