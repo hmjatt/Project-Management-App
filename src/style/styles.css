@@ -48,8 +48,9 @@ body {
 #menuToggle li:hover {
   color: var(--clr-gallery);
   background-color: var(--clr-elfGreen);
-  /* width: 50%; */
-  padding-left: 40px;
+  border-radius: 30px;
+  margin: 0px 25px 0px 25px;
+  padding-left: 47px;
 }
 
 
