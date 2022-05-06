@@ -3,6 +3,157 @@
     --clr-light: #f4f4f4;
     --clr-dark: #333;
     --clr-warning: rgb(99, 36, 36);
+    --clr-navHighlight: #4f7794;
+    --clr-mineShaft: #232323;
+    --clr-gallery: #ededed;
+    --clr-elfGreen: #058179;
+    --clr-nebula: #cbdbda;
+}
+
+html {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 10%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--clr-nebula);
+  color: var(--clr-light);
+}
+
+
+#menuToggle {
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;  
+  z-index: 1;  
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+#menuToggle li {
+  text-decoration: none;
+  color: var(--clr-mineShaft);
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  padding: 10px 0px 10px 50px;
+  font-size: 22px;
+}
+
+#menuToggle li:hover {
+  color: var(--clr-gallery);
+  background-color: var(--clr-elfGreen);
+  /* width: 50%; */
+  padding-left: 40px;
+}
+
+
+/* The hamburger button hidden inside an input element */
+#menuToggle input {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -7px;
+  left: -5px;  
+  padding: 0;
+  cursor: pointer;  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */  
+  -webkit-touch-callout: none;
+}
+
+#menuToggle label {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+#menuToggle label span {
+  display: none;
+}
+
+/*
+ * Hamburger
+ */
+#menuToggle label div {
+  display: block;
+  width: 30px;
+  height: 2px;
+  margin-bottom: 6px;
+  position: relative;
+  background: var(--clr-mineShaft);
+  border-radius: 3px;  
+  z-index: 1;  
+  -webkit-transform-origin: 4px 0px;  
+      -ms-transform-origin: 4px 0px;  
+          transform-origin: 4px 0px;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#menuToggle label div:first-child {
+  -webkit-transform-origin: 0% 100%;
+      -ms-transform-origin: 0% 100%;
+          transform-origin: 0% 100%;
+}
+
+#menuToggle label div:nth-child(2) {
+    -webkit-transform-origin: 0% 0%;
+      -ms-transform-origin: 0% 0%;
+          transform-origin: 0% 0%;
+}
+
+/* 
+ * Change the color of the hamburger when toggled
+ */
+#menuToggle input:checked + label div {
+  background: var(--clr-elfGreen);
+}
+
+/*
+ * Use absolute positioning to place the menu off-screen
+ */
+#menu {
+  position: absolute;
+  width: 80vw;
+  margin: -100px 0 0 -50px;
+  padding: 50px 0px 50px 0px;
+  padding-top: 125px;
+  background: var(--clr-gallery);
+  border-radius: 20px;
+  list-style-type: none;
+  /* Hide the menu off-screen to the left */
+  left: -130%;
+  -webkit-transition: left 0.3s ease;
+  -o-transition: left 0.3s ease;
+  transition: left 0.3s ease; 
+}
+
+
+/*
+ * Slide the menu in from left when the input is checked
+ */
+#menuToggle input:checked ~ ul {
+  left: 0;
+}
+
+
+
+
+
+/* 
+:root {
+    --clr-primary: rgb(54, 112, 199);
+    --clr-light: #f4f4f4;
+    --clr-dark: #333;
+    --clr-warning: rgb(99, 36, 36);
 }
 
 *,
@@ -273,4 +424,4 @@ form {
     left: 0;
     bottom: -35px;
     color: var(--clr-light);
-}
+} */
