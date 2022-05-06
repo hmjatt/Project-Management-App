@@ -12,7 +12,46 @@
     <link rel="icon" sizes="32x32" href="../src/images/svg/list-tab.svg">
 </head>
 <body>
-    <h1 class="title">Stuff I need to do</h1>
+
+    
+        <nav role="navigation">
+            <div id="menuToggle"> 
+              <!--
+              hidden checkbox is used as click reciever,
+              so you can use the :checked selector on it.
+              -->
+              <input name="toggle" type="checkbox" />
+              <label for="toggle">
+                <span>menu</span>
+                <!--
+                divs to be styled as a hamburger button
+                -->
+                <div></div>
+                <div></div>
+                <div></div>
+              </label>
+          
+              
+              <!--
+              the menu that will slide in from the left
+              -->
+              <ul id="menu">
+                <!-- <a href="#"><li>Home</li></a>
+                <a href="#"><li>About</li></a>
+                <a href="#"><li>Contact</li></a> -->
+                <li class="list-name active-list">Youtube</li>
+                <li class="list-name">Work</li>
+                <li class="list-name">Grocery</li>
+              </ul>
+            </div>
+          </nav>
+
+    
+
+
+
+
+    <!-- <h1 class="title">Stuff I need to do</h1>
 
     <div class="all-tasks">
       <h2 class="task-list-title">My lists</h2>
@@ -31,9 +70,9 @@
         />
         <button class="btn create" aria-label="create new list">+</button>
       </form>
-    </div>
+    </div> -->
 
-    <div class="todo-list">
+    <!-- <div class="todo-list">
       <div class="todo-header">
         <h2 class="list-title">YouTube</h2>
         <p class="task-count">3 tasks remaining</p>
@@ -51,7 +90,7 @@
               record todo list video
             </label>
           </div>
-          <!-- /task-1 -->
+           
 
           <div class="task">
               <input 
@@ -63,7 +102,7 @@
                 another task
               </label>
             </div>
-            <!-- /task-2 -->
+            
 
             <div class="task">
                 <input 
@@ -75,7 +114,7 @@
                   a third task
                 </label>
               </div>
-              <!-- /task-3 -->
+               
         </div>
 
         <div class="new-task-creator">
@@ -95,7 +134,7 @@
           <button class="btn delete">Delete list</button>
         </div>
       </div>
-    </div>
+    </div> -->
 
    
     </div>
