@@ -1,8 +1,8 @@
 import './style/styles.css';
-// import gitImage from './images/git-logo.png';
+import gitImage from './images/git-logo.png';
 
-//dom stuff
-
+//catching DOM
+let gitLogoDiv = document.getElementById("gitLogoDiv");
 let addProjectButton = document.getElementById('addProjectButton');
 let projectSubmitButton = document.getElementById('submitBtn');
 let inputMenu = document.getElementById('inputMenu');
@@ -11,6 +11,14 @@ let addTaskButton = document.getElementById('addTaskButton');
 let taskSubmitButton = document.getElementById('taskSubmitButton');
 
 
+//git logo img
+let gitLogo = document.createElement('img');
+gitLogo.src = gitImage;
+gitLogo.classList.add('gitLogo');
+gitLogoDiv.appendChild(gitLogo);
+
+
+// DOM click events
 inputMenu.addEventListener('click', addMargin);
 addTaskButton.addEventListener('click', addTask);
 addProjectButton.addEventListener('click', openForm);
