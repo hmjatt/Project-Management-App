@@ -2,6 +2,7 @@
 	--clr-primary: rgb(54, 112, 199);
 	--clr-light: #f4f4f4;
 	--clr-dark: rgb(58, 58, 58);
+	--clr-white: rgb(252, 252, 252);
 	--clr-warning: rgb(99, 36, 36);
 	--clr-navHighlight: #4f7794;
 	--clr-mineShaft: #232323;
@@ -65,8 +66,8 @@ h1 {
 }
 
 
-/* The hamburger button hidden inside an input element */
-#menuToggle input {
+/* The hamburger button hidden inside an #inputMenu element */
+#menuToggle #inputMenu {
 	display: block;
 	width: 30px;
 	height: 30px;
@@ -82,21 +83,21 @@ h1 {
 	-webkit-touch-callout: none;
 }
 
-#menuToggle label {
+#menuToggle #labelMenu {
 	position: relative;
 	display: block;
 	width: 30px;
 	height: 30px;
 }
 
-#menuToggle label span {
+#menuToggle #labelMenu span {
 	display: none;
 }
 
 /*
  * Hamburger
  */
-#menuToggle label div {
+#menuToggle #labelMenu div {
 	display: block;
 	width: 30px;
 	height: 2px;
@@ -113,13 +114,13 @@ h1 {
 	transition: all 0.3s ease;
 }
 
-#menuToggle label div:first-child {
+#menuToggle #labelMenu div:first-child {
 	-webkit-transform-origin: 0% 100%;
 	-ms-transform-origin: 0% 100%;
 	transform-origin: 0% 100%;
 }
 
-#menuToggle label div:nth-child(2) {
+#menuToggle #labelMenu div:nth-child(2) {
 	-webkit-transform-origin: 0% 0%;
 	-ms-transform-origin: 0% 0%;
 	transform-origin: 0% 0%;
@@ -128,7 +129,7 @@ h1 {
 /* 
  * Change the color of the hamburger when toggled
  */
-#menuToggle input:checked+label div {
+#menuToggle #inputMenu:checked+#labelMenu div {
 	background: var(--clr-mineShaft);
 }
 
@@ -141,7 +142,7 @@ h1 {
 	margin: -80px 0 0 -50px;
 	padding: 50px 0px 50px 0px;
 	padding-top: 125px;
-	background: var(--clr-light);
+	background: var(--clr-gallery);
 	border-radius: 20px;
 	list-style-type: none;
 	/* Hide the menu off-screen to the left */
@@ -153,9 +154,9 @@ h1 {
 
 
 /*
- * Slide the menu in from left when the input is checked
+ * Slide the menu in from left when the #inputMenu is checked
  */
-#menuToggle input:checked~ul {
+#menuToggle #inputMenu:checked~ul {
 
 	transition: left 0.3s ease;
 	left: -130%;
@@ -180,6 +181,22 @@ h1 {
 
 #myForm {
 	display: none;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1.8em;
+	
+}
+
+#myForm form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.3em;
+	background-color: var(--clr-white);
+	width: 12em;
+	padding: 2em .6em 1.5em .6em;
+	border-radius: 20px;
 }
 
 #addProjectForm {
@@ -190,10 +207,11 @@ h1 {
 #addProjectButton {
 	margin-top: 30px;
 	background-color: var(--clr-elfGreen);
+	color: var(--clr-light);
 	border: none;
-	border-radius: 10px;
-	font-size: 1.5em;
-	padding: 2%;
+	border-radius: 12px;
+	font-size: 1.3em;
+	padding: 2% 4% 2% 3%;
 	font-family: 'Source Sans Pro', sans-serif;
 	display: flex;
 	align-items: center;
@@ -207,10 +225,42 @@ h1 {
 
 #addProjectButton span {
 	font-size: 1.5em;
-	font-weight: 700;
-	padding-right: 10px;
+	font-weight: 300;
+	padding: 0px 10px 0px 3px;
 	
 }
+
+#submitBtn {
+ 	font-family: 'Source Sans Pro', sans-serif;
+ 	background-color: var(--clr-elfGreen);
+ 	color: var(--clr-light);
+ 	border: none;
+ 	border: none;
+ 	border-radius: 12px;
+ 	font-size: 1em;
+ 	padding: 8% 30% 8% 30%;
+}
+
+#projectLabel {
+	font-size: 1.3em;
+	font-weight: 700;
+}
+
+#projectInput {
+	font-size: 0.8em;
+	font-weight: 400;
+	font-family: 'Source Sans Pro', sans-serif;
+	border-radius: 15px;
+	padding: 0px 15px 0px 15px;
+}
+
+
+
+
+
+/* #projectName *, #projectLabel *, #submitBtn *, #myForm * {
+	all: unset;
+} */
 
 /* 
 :root {

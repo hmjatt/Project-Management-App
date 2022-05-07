@@ -23,8 +23,8 @@
               hidden checkbox is used as click reciever,
               so you can use the :checked selector on it.
               -->
-			<input name="toggle" type="checkbox" />
-			<label for="toggle">
+			<input id="inputMenu" name="toggle" type="checkbox" />
+			<label id="labelMenu" for="toggle">
 				<span>menu</span>
 				<!--
                 divs to be styled as a hamburger button
@@ -50,9 +50,9 @@
 					<button id="addProjectButton"> <span>+</span>Create Project</button>
 					<div class="form-popup" id="myForm">
 						<form action="">
-							<label for="projectName">Project Name</label><br>
-							<input type="text" id="projectName" name="projectName">
-							<input type="submit" value="Submit">
+							<label id="projectLabel" for="projectName">Project Name</label><br>
+							<input type="text" id="projectInput" name="projectInput"><br>
+							<input id="submitBtn" type="submit" value="Create"><br>
 						</form>
 					</div>
 				</div>
