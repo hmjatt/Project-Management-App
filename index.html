@@ -73,28 +73,23 @@
 			<div class="todo-body">
 				<div id="tasksContainer" class="tasks">
 					<div class="task">
-						<input type="checkbox" id="task-1" />
-						<label for="task-1">
-							<span class="custom-checkbox"></span>
-							record todo list video
+						<input type="checkbox" id="task-1" name="task-1" value="task"/>
+						<label for="task-1" data-content="Record todo list video">
+							Record todo list video
 						</label>
 					</div>
-	
-	
+
 					<div class="task">
-						<input type="checkbox" id="task-2" />
-						<label for="task-2">
-							<span class="custom-checkbox"></span>
-							another task
+						<input type="checkbox" id="task-2" name="task-2" value="task"/>
+						<label for="task-2" data-content="Another Task">
+							Another Task
 						</label>
 					</div>
-	
-	
+
 					<div class="task">
-						<input type="checkbox" id="task-3" />
-						<label for="task-3">
-							<span class="custom-checkbox"></span>
-							a third task
+						<input type="checkbox" id="task-3" name="task-3" value="task"/>
+						<label for="task-3" data-content="Third Task">
+							Third Task
 						</label>
 					</div>
 	
@@ -103,10 +98,6 @@
 					<button id="addTaskButton"> <span>+</span>Create Task</button>
 	
 					<div id="myTasks" class="new-task-creator">
-						<!-- <label id="projectLabel" for="projectName">Project Name</label><br>
-						<input type="text" id="projectInput" name="projectName"><br>
-						<input id="submitBtn" type="submit" value="Create"><br> -->
-
 						<form action="">
 							<label id="taskLabel" for="taskName">Task Name</label><br>
 							<input type="text" class="new task" id="taskInput" name="taskName"><br>
