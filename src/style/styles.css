@@ -283,19 +283,17 @@ h2 {
 	transition: all 0.3s ease;
 }
 
-/* #taskList {
-	width: 85vw;
-	max-width: 900px;
-} */
-
 .todo-header {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	background-color: var(--clr-light);
 	border-radius: 20px;
-	
 	margin: 0% 5% 5% 5%;
+}
+
+.task-count {
+	color: var(--clr-primary);
 }
 
 .todo-body {
