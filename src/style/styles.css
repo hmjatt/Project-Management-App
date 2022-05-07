@@ -31,6 +31,10 @@ h1 {
 	margin: -0.5em 0.5em 0.5em 0.5em;
 }
 
+h2 {
+	margin-bottom: 0px;
+}
+
 #menuToggle {
 	display: block;
 	position: relative;
@@ -184,7 +188,6 @@ h1 {
 	justify-content: center;
 	align-items: center;
 	margin-top: 1.8em;
-	
 }
 
 #myForm form {
@@ -254,7 +257,35 @@ h1 {
 	padding: 0px 15px 0px 15px;
 }
 
+.todo-list {
+	margin-top: 30.5em;
+	background: var(--clr-gallery);
+	padding: 10%;
+	border-radius: 20px;
+}
 
+.addmarginAfterClick {
+	margin-top: 5em;
+}
+
+.todo-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--clr-light);
+	border-radius: 20px;
+	margin-bottom: 15px;
+}
+
+.todo-body {
+	background-color: var(--clr-light);
+	border-radius: 20px;
+	padding: 15%;
+}
+
+#myTasks {
+	display: none;
+}
 
 
 
