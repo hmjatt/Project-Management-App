@@ -4,24 +4,29 @@
 	--clr-dark: rgb(58, 58, 58);
 	--clr-white: rgb(252, 252, 252);
 	--clr-warning: rgb(99, 36, 36);
-	--clr-navHighlight: #4f7794;
+	--clr-navHighlight: #4f77948f;
 	--clr-mineShaft: #232323;
 	--clr-gallery: #ededed;
 	--clr-elfGreen: #058179;
 	--clr-nebula: #cbdbda;
+	--clr-delete: #ff494962;
 }
 
 html {
 	font-family: 'Source Sans Pro', sans-serif;
-	padding: 5%;
-	/* max-width: 900px; */
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 body {
-	margin: 0;
+
 	padding: 0;
+	margin: 0;
 	background: var(--clr-nebula);
 	color: var(--clr-mineShaft);
+	
 }
 
 h1 {
@@ -34,6 +39,11 @@ h1 {
 
 h2 {
 	margin-bottom: 0px;
+}
+
+#container {
+	margin: 3%;
+	
 }
 
 
@@ -140,12 +150,12 @@ h2 {
  */
 #menu {
 	position: absolute;
-	width: 99vw;
+	width: 100vw;
 	max-width: 900px;
 	margin: -80px 0 0 -50px;
 	padding: 50px 0px 50px 0px;
 	padding-top: 125px;
-	background: var(--clr-gallery);
+	background: var(--clr-light);
 	border-radius: 20px;
 	list-style-type: none;
 	/* Hide the menu off-screen to the left */
@@ -162,7 +172,7 @@ h2 {
 #menuToggle #inputMenu:checked~ul {
 
 	transition: left 0.3s ease;
-	left: -130%;
+	left: -200%;
 }
 
 .list-img {
@@ -186,14 +196,14 @@ h2 {
 	transition: all 0.3s ease;
 }
 
-#myForm form {
+#myForm form, #myTasks form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	font-size: 1.3em;
 	background-color: var(--clr-white);
-	width: 12em;
+	width: 15em;
 	padding: 2em .6em 1.5em .6em;
 	border-radius: 20px;
 }
@@ -208,7 +218,7 @@ h2 {
 	background-color: var(--clr-elfGreen);
 	color: var(--clr-light);
 	border: none;
-	border-radius: 12px;
+	border-radius: 42px;
 	font-size: 1.4em;
 	padding: 2% 10% 2% 8%;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -229,22 +239,27 @@ h2 {
 	
 }
 
-#submitBtn {
+#submitBtn, #taskSubmitButton {
  	font-family: 'Source Sans Pro', sans-serif;
  	background-color: var(--clr-elfGreen);
  	color: var(--clr-light);
  	border: none;
- 	border-radius: 12px;
+ 	border-radius: 32px;
  	font-size: 1em;
- 	padding: 8% 30% 8% 30%;
+ 	padding: 2% 30% 2% 30%;
+	 transition: all 0.3s ease;
 }
 
-#projectLabel {
+#submitBtn:hover, #taskSubmitBtn:hover {
+	opacity: 0.8;
+}
+
+#projectLabel, #taskLabel {
 	font-size: 1.3em;
 	font-weight: 700;
 }
 
-#projectInput {
+#projectInput, #taskInput {
 	font-size: 0.8em;
 	font-weight: 400;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -257,7 +272,7 @@ h2 {
 	margin-top: 31em;
 	background: var(--clr-gallery);
 	border-radius: 20px;
-	width: 99vw;
+	width: 100vw;
 	max-width: 900px;
 	padding-top: 3%;
 	padding-bottom: 1%;
@@ -286,7 +301,7 @@ h2 {
 .todo-body {
 	background-color: var(--clr-light);
 	border-radius: 20px;
-	padding: 10%;
+	padding: 10% 10% 0% 10%;
 	margin: 5%;
 }
 
@@ -299,11 +314,17 @@ h2 {
  	background-color: var(--clr-elfGreen);
  	color: var(--clr-light);
  	border: none;
- 	border-radius: 12px;
+ 	border-radius: 32px;
  	font-size: 1.1em;
  	padding: 2% 10% 2% 4%;
 	 display: flex;
 	 align-items: center;
+	 margin-bottom: 20px;
+	 transition: all 0.3s ease;
+}
+
+#addTaskButton:hover {
+	opacity: 0.8;
 }
 
 #addTaskButton span {
@@ -313,9 +334,8 @@ h2 {
 }
 
 #createTaskContainer {
-	background-color: var(--clr-nebula);
 	border-radius: 20px;
-	padding: 8%;
+	padding: 5%;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -328,6 +348,33 @@ h2 {
 	border-radius: 20px;
 	padding: 8%;
 	margin-bottom: 15px;
+}
+
+.delete-stuff {
+	display: flex;
+	flex-direction: column;}
+
+.delete-stuff button {
+	font-family: 'Source Sans Pro', sans-serif;
+	border: none;
+	margin: 0.5em;
+	border-radius: 12px;
+	font-size: 1em;
+	padding: 0.11em 1em 0.11em 1em;
+	transition: all 0.3s ease;
+}
+.delete-stuff button:hover {
+	opacity: 0.8;
+}
+
+#clearBtn {
+	background-color: var(--clr-navHighlight);
+	color: var(--clr-mineShaft);
+}
+
+#deleteBtn {
+	background-color: var(--clr-delete);
+	color: var(--clr-mineShaft);
 }
 
 

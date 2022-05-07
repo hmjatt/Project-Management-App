@@ -99,15 +99,20 @@
 					<button id="addTaskButton"> <span>+</span>Create Task</button>
 	
 					<div id="myTasks" class="new-task-creator">
+						<!-- <label id="projectLabel" for="projectName">Project Name</label><br>
+						<input type="text" id="projectInput" name="projectName"><br>
+						<input id="submitBtn" type="submit" value="Create"><br> -->
+
 						<form action="">
-							<input type="text" class="new task" placeholder="new task name" aria-label="new task name" />
-							<button id="taskSubmitButton" class="btn create" aria-label="create new task">+</button>
+							<label id="taskLabel" for="taskName">Task Name</label><br>
+							<input type="text" class="new task" id="taskInput" name="taskName"><br>
+							<input id="taskSubmitButton" class="new task" type="submit" value="Create"><br>
 						</form>
 					</div>
 	
 					<div class="delete-stuff">
-						<button class="btn delete">Clear completed tasks</button>
-						<button class="btn delete">Delete list</button>
+						<button id="clearBtn" class="btn delete">Clear completed tasks</button>
+						<button id="deleteBtn" class="btn delete">Delete list</button>
 					</div>
 				</div>
 	
