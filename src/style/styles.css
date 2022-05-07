@@ -48,7 +48,7 @@ h2 {
 	padding-left: 1%;
 } 
 
-#gitLogoDiv {
+#gitLogoDivContainer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -312,7 +312,7 @@ h2 {
 .todo-body {
 	background-color: var(--clr-light);
 	border-radius: 20px;
-	padding: 10% 10% 0% 10%;
+	padding: 10% 5% 0% 5%;
 	margin: 5%;
 }
 
