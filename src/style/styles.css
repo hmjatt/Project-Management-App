@@ -4,7 +4,7 @@
 	--clr-light: #f4f4f4;
 	--clr-dark: rgb(58, 58, 58);
 	--clr-white: rgb(252, 252, 252);
-	--clr-warning: rgb(99, 36, 36);
+	--clr-warning: #e97560;
 	--clr-navHighlight: #4f7794d0;
 	--clr-mineShaft: #232323;
 	--clr-gallery: #ededed;
@@ -275,6 +275,19 @@ h2 {
 	font-family: 'Source Sans Pro', sans-serif;
 	border-radius: 15px;
 	padding: 0px 15px 0px 15px;
+}
+
+.deleteProjectBtn {
+	border: none;
+	background: var(--clr-warning);
+	border-radius: 20px;
+	padding: 1px 8px 1px 8px;
+	font-size: 0.8em;
+	display: flex;
+	justify-content: center;
+	margin-left: 2%;
+	cursor: pointer;
+	font-weight: 300;
 }
 
 .todo-list {
