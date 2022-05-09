@@ -309,7 +309,8 @@ h2 {
 
 #taskList {
 	grid-area: tasks;
-	/* margin-top: 80vh; */
+	/* margin-bottom: 130vh; */
+	/* margin-top: 50vh; */
 }
 
 .todo-list {
@@ -324,7 +325,7 @@ h2 {
 }
 
 .addmarginAfterClick {
-	margin-top: 10vh;
+	margin-top: 5vh;
 	transition: all 0.3s ease;
 }
 

@@ -8,6 +8,7 @@ function createProjects() {
 	let newProjectForm = document.querySelector('[data-new-project-form]');
 	let newProjectInput = document.querySelector('[data-new-project-input]');
 	let projectsContainer = document.querySelector('[data-projects]');
+	let dataProject = document.querySelector('[data-project]');
 
 	
 
@@ -58,10 +59,14 @@ function createProjects() {
 		// 						${names} 
 		// 					<button class="deleteProjectBtn">x</button>`;
 			projectsContainer.append(project);
+			let marginTop = '35em'
+			taskList.style.marginTop = '35em';
 			console.log("works", project);	
 
 		// return{ id: Date.now().toString(), names: names, tasks: [] };
 	}
+
+	//add margin when a new project is added
 
 }
 
