@@ -228,6 +228,7 @@ h2 {
 	align-items: center;
 	margin-top: 1.8em;
 	transition: all 0.3s ease;
+	
 }
 
 #myForm form, #myTasks form {
@@ -237,6 +238,7 @@ h2 {
 	justify-content: center;
 	font-size: 1.3em;
 	background-color: var(--clr-white);
+	border: 1px solid var(--clr-elfGreen);
 	width: 15em;
 	padding: 2em .6em 1.5em .6em;
 	border-radius: 20px;
@@ -342,21 +344,13 @@ h2 {
 	transition: all 0.3s ease;
 }
 
-/* .addmarginAfterFormOpen {
-	margin-top: 28em;
-	transition: all 0.3s ease;
-}
-
-.removemarginAfterFormClose {
-	margin-top: 28em;
-	transition: all 0.3s ease;
-} */
 
 .todo-header {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	background-color: var(--clr-light);
+	border: 1px solid var(--clr-elfGreen);
 	border-radius: 20px;
 	margin: 0% 5% 5% 5%;
 }
@@ -367,6 +361,7 @@ h2 {
 
 .todo-body {
 	background-color: var(--clr-light);
+	border: 1px solid var(--clr-elfGreen);
 	border-radius: 20px;
 	padding: 5% 1% 0% 1%;
 	margin: 5%;
@@ -414,10 +409,6 @@ h2 {
 	border-radius: 20px;
 	margin-bottom: 15px;
 }
-
-
-
-
 
 #tasksContainer input[type="checkbox"] {
 	position: relative;
@@ -489,6 +480,7 @@ h2 {
 	display: flex;
 	align-items: center;
 	background-color: var(--clr-gallery);
+	border: 1px solid var(--clr-primary);
 	margin: 2%;
 	padding: 2%;
 	border-radius: 10px;
