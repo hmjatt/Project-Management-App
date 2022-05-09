@@ -14,6 +14,7 @@ function ui_ux() {
 
 	// DOM click events
 	inputMenu.addEventListener('click', addMargin);
+	inputMenu.addEventListener('click', hideH1);
 	addTaskButton.addEventListener('click', addTask);
 	addProjectButton.addEventListener('click', openForm);
 	projectSubmitButton.addEventListener('click', closeForm);
@@ -34,6 +35,12 @@ function ui_ux() {
 
 	function addMargin() {
 		taskList.classList.toggle('addmarginAfterClick');
+	}
+
+	function hideH1() {
+		let h1Ele = document.getElementsByTagName('h1')[0];
+		// console.log(h1Ele);
+		h1Ele.classList.toggle('hideH1');
 	}
 
 	function addTask() {

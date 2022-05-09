@@ -53,7 +53,7 @@ function createProjects() {
 
 		project.append(projectImg, names, deleteProjectButton);
 
-		projectsContainer.append(project);
+		projectsContainer.prepend(project);
 		addMarginToTasks();
 		
 		console.log("works", project);	

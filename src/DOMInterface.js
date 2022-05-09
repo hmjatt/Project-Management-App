@@ -5,6 +5,7 @@ function DOMInterface() {
 	let gitLogoDiv = document.getElementById('gitLogoDiv');
 	let addProjectButton = document.getElementById('addProjectButton');
 	
+	
 	let inputMenu = document.getElementById('inputMenu');
 	let taskList = document.getElementById('taskList');
 	let addTaskButton = document.getElementById('addTaskButton');

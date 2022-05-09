@@ -26,6 +26,7 @@ body {
 	color: var(--clr-mineShaft);
 	display: flex;
 	justify-content: center;
+	
 }
 
 h1 {
@@ -33,7 +34,15 @@ h1 {
 	font-size: 3rem;
 	display: flex;
 	justify-content: center;
-	margin: -0.5em 0.5em 0.5em 0.5em;
+	align-self: center;
+	align-items: center;
+	margin: -0.5em 0.5em 0.5em 40.5%;
+	z-index: 2;
+	position: absolute;
+}
+
+.hideH1 {
+	display: none;
 }
 
 h2 {
