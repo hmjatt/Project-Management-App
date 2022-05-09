@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', DOMInterface);
 
 function ui_ux() {
 	
+	let projectSubmitButton = document.getElementById('submitBtn');
 	//git logo img
 	let gitLogo = document.createElement('img');
 	gitLogo.src = gitImage;
@@ -15,7 +16,7 @@ function ui_ux() {
 	inputMenu.addEventListener('click', addMargin);
 	addTaskButton.addEventListener('click', addTask);
 	addProjectButton.addEventListener('click', openForm);
-	// projectSubmitButton.addEventListener('click', closeForm);
+	projectSubmitButton.addEventListener('click', closeForm);
 	taskSubmitButton.addEventListener('click', closeTaskForm);
 
 
@@ -28,11 +29,11 @@ function ui_ux() {
 
 	function closeForm() {
 		document.getElementById("myForm").style.display = "none";
+		addProjectButton.style.display = "block";
 	}
 
 	function addMargin() {
 		taskList.classList.toggle('addmarginAfterClick');
-		console.log("it works");
 	}
 
 	function addTask() {
