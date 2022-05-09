@@ -8,8 +8,8 @@ function createProjects() {
 	let newProjectForm = document.querySelector('[data-new-project-form]');
 	let newProjectInput = document.querySelector('[data-new-project-input]');
 	let projectsContainer = document.querySelector('[data-projects]');
-	let dataProject = document.querySelector('[data-project]');
-
+	// let dataProject = document.querySelector('[data-project]');
+	// let addProjectButton = document.getElementById('addProjectButton');
 	
 
 	// let projects = [{
@@ -53,20 +53,22 @@ function createProjects() {
 
 		project.append(projectImg, names, deleteProjectButton);
 
-
+		projectsContainer.append(project);
+		addMarginToTasks();
 		
-		// = `<img class="list-img" src="../src/images/svg/list.svg" alt="list"> 
-		// 						${names} 
-		// 					<button class="deleteProjectBtn">x</button>`;
-			projectsContainer.append(project);
-			let marginTop = '35em'
-			taskList.style.marginTop = '35em';
-			console.log("works", project);	
+		console.log("works", project);	
 
-		// return{ id: Date.now().toString(), names: names, tasks: [] };
 	}
 
-	//add margin when a new project is added
+	//add margin to tasks when a new project is added
+	function addMarginToTasks() {
+		let getHeight = getComputedStyle(taskList).marginTop;
+		let newHeight = parseInt(getHeight) + 60;
+		let heightInStr = newHeight.toString();
+		taskList.style.marginTop = heightInStr + 'px';
+
+		console.log(getHeight, newHeight, heightInStr);
+	}
 
 }
 

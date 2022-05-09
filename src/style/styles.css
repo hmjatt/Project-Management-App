@@ -329,6 +329,16 @@ h2 {
 	transition: all 0.3s ease;
 }
 
+.addmarginAfterFormOpen {
+	margin-top: 40em;
+	transition: all 0.3s ease;
+}
+
+.removemarginAfterFormClose {
+	margin-top: 28em;
+	transition: all 0.3s ease;
+}
+
 .todo-header {
 	display: flex;
 	flex-direction: column;
