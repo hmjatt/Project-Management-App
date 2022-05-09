@@ -20,7 +20,7 @@ html {
 }
 
 body {
-	padding: 0;
+	padding-bottom: 10%;
 	margin: 0;
 	background: var(--clr-nebula);
 	color: var(--clr-mineShaft);
@@ -183,6 +183,12 @@ h2 {
 	padding: 50px 0px 50px 0px;
 	padding-top: 125px;
 	background: var(--clr-light);
+	box-shadow: 
+				0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+				0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+				0 12.5px 10px rgba(0, 0, 0, 0.06),
+				0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+				0 41.8px 33.4px rgba(0, 0, 0, 0.086);
 	border-radius: 20px;
 	list-style-type: none;
 	/* Hide the menu off-screen to the left */
@@ -315,13 +321,20 @@ h2 {
 
 .todo-list {
 	transition: all 0.3s ease;
-	margin-top: 28em;
+	margin-top: 29em;
 	background: var(--clr-gallery);
 	border-radius: 20px;
 	width: 100vw;
 	max-width: 900px;
 	padding-top: 3%;
 	padding-bottom: 1%;
+	box-shadow: 
+				0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+				0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+				0 12.5px 10px rgba(0, 0, 0, 0.06),
+				0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+				0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+				0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
 .addmarginAfterClick {
@@ -329,15 +342,15 @@ h2 {
 	transition: all 0.3s ease;
 }
 
-.addmarginAfterFormOpen {
-	margin-top: 40em;
+/* .addmarginAfterFormOpen {
+	margin-top: 28em;
 	transition: all 0.3s ease;
 }
 
 .removemarginAfterFormClose {
 	margin-top: 28em;
 	transition: all 0.3s ease;
-}
+} */
 
 .todo-header {
 	display: flex;

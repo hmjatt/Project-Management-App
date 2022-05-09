@@ -24,15 +24,11 @@ function ui_ux() {
 	//Functions for buttons and adding margin
 	function openForm() {
 		document.getElementById("myForm").style.display = "block";
-		taskList.classList.add('addmarginAfterFormOpen');
-		taskList.classList.remove('removemarginAfterFormClose');
 		addProjectButton.style.display = "none";
 	}
 
 	function closeForm() {
 		document.getElementById("myForm").style.display = "none";
-		taskList.classList.add('removemarginAfterFormClose');
-		taskList.classList.remove('addmarginAfterFormOpen');
 		addProjectButton.style.display = "block";
 	}
 
