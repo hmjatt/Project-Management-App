@@ -1,15 +1,13 @@
 import DOMInterface from './DOMInterface.js';
-document.addEventListener('DOMContentLoaded', DOMInterface);
+import deleteProject from './deleteProject.js';
+
+document.addEventListener('load', DOMInterface);
+document.addEventListener('load', deleteProject);
 
 
 
 function createProjects() {
 
-	let newProjectForm = document.querySelector('[data-new-project-form]');
-	let newProjectInput = document.querySelector('[data-new-project-input]');
-	// let dataProject = document.querySelector('[data-project]');
-	// let addProjectButton = document.getElementById('addProjectButton');
-	
 	newProjectForm.addEventListener('submit', addProject);
 
 	//create add projects fxn

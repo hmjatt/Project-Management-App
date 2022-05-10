@@ -1,12 +1,14 @@
 import DOMInterface from './DOMInterface.js';
-document.addEventListener('DOMContentLoaded', DOMInterface);
+// import createProjects from './createProjects.js';
+
+document.addEventListener('load', DOMInterface);
+// document.addEventListener('DOMContentLoaded', createProjects);
 
 
 // create delete projects fxn
 
 function deleteProject() {
 	
-	let deleteProjectBtn = document.querySelectorAll('.deleteProjectBtn');
 	
 	//on pressing button delete project
 	deleteProjectBtn.forEach(element => {
@@ -14,7 +16,8 @@ function deleteProject() {
 	});
 
 	function deleteProject(project) {
-		project.composedPath()[1].remove();
+		console.log(project);
+		// project.composedPath()[1].remove();
 	}
 }
 

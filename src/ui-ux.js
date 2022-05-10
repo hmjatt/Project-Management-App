@@ -1,11 +1,11 @@
 import DOMInterface from './DOMInterface.js';
 import gitImage from './images/git-logo.png';
 
-document.addEventListener('DOMContentLoaded', DOMInterface);
+document.addEventListener('load', DOMInterface);
 
 function ui_ux() {
 	
-	let projectSubmitButton = document.getElementById('submitBtn');
+	
 	//git logo img
 	let gitLogo = document.createElement('img');
 	gitLogo.src = gitImage;
@@ -18,8 +18,8 @@ function ui_ux() {
 	addTaskButton.addEventListener('click', addTask);
 	addProjectButton.addEventListener('click', openForm);
 	projectSubmitButton.addEventListener('click', closeForm);
+	
 	taskSubmitButton.addEventListener('click', closeTaskForm);
-
 
 
 	//Functions for buttons and adding margin
@@ -39,7 +39,6 @@ function ui_ux() {
 
 	function hideH1() {
 		let h1Ele = document.getElementsByTagName('h1')[0];
-		// console.log(h1Ele);
 		h1Ele.classList.toggle('hideH1');
 	}
 

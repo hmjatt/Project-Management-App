@@ -4,10 +4,10 @@ import ui_ux from './ui-ux.js';
 import deleteProject from './deleteProject.js';
 import createProjects from './createProjects.js';
 
-document.addEventListener('DOMContentLoaded', DOMInterface);
-document.addEventListener('DOMContentLoaded', ui_ux);
-document.addEventListener('DOMContentLoaded', deleteProject);
-document.addEventListener('DOMContentLoaded', createProjects);
+document.addEventListener('load', DOMInterface);
+document.addEventListener('load', ui_ux);
+document.addEventListener('load', deleteProject);
+document.addEventListener('load', createProjects);
 
 
 
