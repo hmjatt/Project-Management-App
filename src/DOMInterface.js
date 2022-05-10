@@ -50,7 +50,6 @@ function DOMInterface() {
 	}
 
 	function addMargin() {
-		console.log("it works")
 		taskList.classList.toggle('addmarginAfterClick');
 	}
 
