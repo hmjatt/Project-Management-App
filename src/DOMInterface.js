@@ -12,6 +12,9 @@ function DOMInterface() {
 	let taskSubmitButton = document.getElementById('taskSubmitButton');
 
 	//grab projectsContainer
+
+	let projectsContainer = document.getElementById('projectsContainer');
+
 	//grab projects 
 	// let projects = document.querySelectorAll('[data-project]');
 	// let deleteProjectBtn = document.querySelectorAll('.deleteProjectBtn');

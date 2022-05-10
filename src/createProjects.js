@@ -7,7 +7,6 @@ function createProjects() {
 
 	let newProjectForm = document.querySelector('[data-new-project-form]');
 	let newProjectInput = document.querySelector('[data-new-project-input]');
-	let projectsContainer = document.querySelector('[data-projects]');
 	// let dataProject = document.querySelector('[data-project]');
 	// let addProjectButton = document.getElementById('addProjectButton');
 	
@@ -53,7 +52,7 @@ function createProjects() {
 
 		project.append(projectImg, names, deleteProjectButton);
 
-		projectsContainer.prepend(project);
+		projectsContainer.append(project);
 		addMarginToTasks();
 		
 		console.log("works", project);	
