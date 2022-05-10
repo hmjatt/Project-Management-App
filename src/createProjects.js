@@ -1,12 +1,14 @@
 import DOMInterface from './DOMInterface.js';
 import deleteProject from './deleteProject.js';
 
-document.addEventListener('load', DOMInterface);
-document.addEventListener('load', deleteProject);
+document.addEventListener('DOMContentLoaded', DOMInterface);
+document.addEventListener('DOMContentLoaded', deleteProject);
+
 
 
 
 function createProjects() {
+
 
 	newProjectForm.addEventListener('submit', addProject);
 
@@ -14,10 +16,10 @@ function createProjects() {
 
 	function addProject(e) {
 		e.preventDefault();
-		const projectName = newProjectInput.value;
+		const projectName = projectInput.value;
 		if (projectName === null || projectName === '') return;
 		createProject(projectName);
-		newProjectInput.value = null;
+		projectInput.value = null;
 	}
 
 	function createProject(names) {

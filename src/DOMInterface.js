@@ -1,3 +1,4 @@
+import gitImage from './images/git-logo.png';
 
 function DOMInterface() {
 
@@ -11,14 +12,63 @@ function DOMInterface() {
 	//projects
 	let projectSubmitButton = document.getElementById('submitBtn');
 	let addProjectButton = document.getElementById('addProjectButton');
+	let newProjectForm = document.getElementById('[newProjectForm]');
 	let deleteProjectBtn = document.querySelectorAll('.deleteProjectBtn');
-	let newProjectForm = document.querySelector('[data-new-project-form]');
-	let newProjectInput = document.querySelector('[data-new-project-input]');
 	let projectsContainer = document.getElementById('projectsContainer');
+	let projectInput = document.getElementById('projectInput');
 
+	
 	//tasks
 	let addTaskButton = document.getElementById('addTaskButton');
 	let taskSubmitButton = document.getElementById('taskSubmitButton');
+
+	
+	//git logo img
+	let gitLogo = document.createElement('img');
+	gitLogo.src = gitImage;
+	gitLogo.classList.add('gitLogo');
+	gitLogoDiv.appendChild(gitLogo);
+
+	// DOM click events
+	inputMenu.addEventListener('click', addMargin);
+	inputMenu.addEventListener('click', hideH1);
+	addTaskButton.addEventListener('click', addTask);
+	addProjectButton.addEventListener('click', openForm);
+	projectSubmitButton.addEventListener('click', closeForm);
+	taskSubmitButton.addEventListener('click', closeTaskForm);
+
+
+	//Functions for buttons and adding margin
+	function openForm() {
+		document.getElementById("myForm").style.display = "block";
+		addProjectButton.style.display = "none";
+	}
+
+	function closeForm() {
+		document.getElementById("myForm").style.display = "none";
+		addProjectButton.style.display = "block";
+	}
+
+	function addMargin() {
+		console.log("it works")
+		taskList.classList.toggle('addmarginAfterClick');
+	}
+
+	function hideH1() {
+		let h1Ele = document.getElementsByTagName('h1')[0];
+		h1Ele.classList.toggle('hideH1');
+	}
+
+	function addTask() {
+		document.getElementById("myTasks").style.display = "block";
+		addTaskButton.style.display = "none";
+	}
+
+	function closeTaskForm() {
+		document.getElementById("myTasks").style.display = "none";
+	}
+
+
 }
 
 
