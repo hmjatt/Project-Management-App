@@ -104,7 +104,6 @@ h2 {
 	font-size: 22px;
 	display: flex;
 	align-items: center;
-	transition: all 0.3s ease;
 }
 
 #menuToggle li:hover {
@@ -228,7 +227,6 @@ h2 {
 	border-radius: 35px;
 	margin: 0px 25px 0px 25px;
 	color: var(--clr-light);
-	transition: all 0.3s ease;
 }
 
 #myForm {

@@ -16,6 +16,7 @@ function DOMInterface() {
 	let deleteProjectBtn = document.querySelectorAll('.deleteProjectBtn');
 	let projectsContainer = document.getElementById('projectsContainer');
 	let projectInput = document.getElementById('projectInput');
+	// let listOfProjects = document.querySelectorAll('.list-name');
 
 	
 	//tasks
