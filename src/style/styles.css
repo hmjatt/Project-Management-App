@@ -332,7 +332,7 @@ h2 {
 
 .todo-list {
 	transition: all 0.3s ease;
-	margin-top: 29em;
+	margin-top: 27em;
 	background: var(--clr-gallery);
 	border-radius: 20px;
 	width: 100vw;
