@@ -9,13 +9,10 @@ function deleteProject() {
 
 	//on pressing button delete project
 	
-
 	document.body.addEventListener( 'click', function ( event ) {
 		if( event.target.className == 'deleteProjectBtn' ) {
-			//   someFunc();
 			event.target.parentElement.remove();
 			removeMarginFromTasks();
-			console.log(event.target.className);
 		};
 	});
 

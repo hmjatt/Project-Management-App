@@ -1,8 +1,8 @@
 import DOMInterface from './DOMInterface.js';
-import deleteProject from './deleteProject.js';
+import deleteProjects from './deleteProjects.js';
 
 document.addEventListener('DOMContentLoaded', DOMInterface);
-document.addEventListener('DOMContentLoaded', deleteProject);
+document.addEventListener('DOMContentLoaded', deleteProjects);
 
 
 
