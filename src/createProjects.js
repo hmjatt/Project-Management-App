@@ -39,16 +39,8 @@ function createProjects() {
 		project.append(projectImg, names, deleteProjectButton);
 
 		projectsContainer.append(project);
-		// addMarginToTasks();
 	}
 
-	// //add margin to tasks when a new project is added
-	// function addMarginToTasks() {
-	// 	let getHeight = getComputedStyle(taskList).marginTop;
-	// 	let newHeight = parseInt(getHeight) + 60;
-	// 	let heightInStr = newHeight.toString();
-	// 	taskList.style.marginTop = heightInStr + 'px';
-	// }
 }
 
 export default createProjects;
