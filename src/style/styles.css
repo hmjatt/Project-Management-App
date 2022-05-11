@@ -330,7 +330,7 @@ h2 {
 
 .todo-list {
 	transition: all 0.3s ease;
-	margin-top: 27em;
+	margin-top: 26em;
 	background: var(--clr-gallery);
 	border-radius: 20px;
 	width: 100vw;
@@ -547,5 +547,13 @@ h2 {
 		margin-right: 0%;
 		margin-left: 0%;
 	}
-} 
+
+	
+}
+
+@media (min-width: 1400px) {
+	.todo-list{
+		margin-top: 20em;
+	}
+}
 

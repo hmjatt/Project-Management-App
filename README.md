@@ -26,6 +26,7 @@ An Application that let's you organize your Projects, Tasks and set their proior
     - Css Loader
     - Asset Resource Loader
     - Source Maps
+	- Local Storage
 
 
 
