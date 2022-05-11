@@ -51,22 +51,25 @@ h2 {
 
 #container {
 	margin-right: -18%;
+	margin-top: 50px;
 	padding-left: 1%;
 	display: grid;
 	justify-content: space-around;
 	grid-template-columns: 1fr;
 	grid-template-rows: auto;
 	grid-template-areas: 
-	  "logo"
 	  "projects"
-	  "tasks";
+	  "tasks"
+	  "logo";
 } 
 
 #gitLogoDivContainer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	grid-area: logo;
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	align-items: center;
 }
 
 .gitLogo {
@@ -184,7 +187,7 @@ h2 {
  * Use absolute positioning to place the menu off-screen
  */
 #menu {
-	position: absolute;
+	position: relative;
 	width: 100vw;
 	max-width: 900px;
 	margin: -80px 0 0 -50px;
@@ -330,7 +333,7 @@ h2 {
 
 .todo-list {
 	transition: all 0.3s ease;
-	margin-top: 26em;
+	margin-top: 5em;
 	background: var(--clr-gallery);
 	border-radius: 20px;
 	width: 100vw;
@@ -346,8 +349,14 @@ h2 {
 				0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
-.addmarginAfterClick {
-	margin-top: 5vh;
+.addMarginAfterClick {
+	margin-top: 26vh;
+	transition: all 0.3s ease;
+}
+
+.removeMarginAfterClick {
+	transform: translateY(-70%);
+	/* margin-top: -10vh; */
 	transition: all 0.3s ease;
 }
 
@@ -553,7 +562,7 @@ h2 {
 
 @media (min-width: 1400px) {
 	.todo-list{
-		margin-top: 20em;
+		margin-top: 0em;
 	}
 }
 

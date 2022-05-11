@@ -1,3 +1,4 @@
+// import { node } from 'webpack';
 import gitImage from './images/git-logo.png';
 
 function DOMInterface() {
@@ -5,9 +6,9 @@ function DOMInterface() {
 	//catching DOM
 	let gitLogoDiv = document.getElementById('gitLogoDiv');
 
-	// let inputMenu = document.getElementById('inputMenu');
+	let inputMenu = document.getElementById('inputMenu');
 
-	// let taskList = document.getElementById('taskList');
+	let taskList = document.getElementById('taskList');
 
 	//projects
 	let projectSubmitButton = document.getElementById('submitBtn');
@@ -31,8 +32,11 @@ function DOMInterface() {
 	gitLogoDiv.appendChild(gitLogo);
 
 	// DOM click events
-	// inputMenu.addEventListener('click', addMargin);
-	// inputMenu.addEventListener('click', hideH1);
+	inputMenu.addEventListener('click', addMargin);
+	inputMenu.addEventListener('click', hideH1);
+
+
+
 	addTaskButton.addEventListener('click', addTask);
 	addProjectButton.addEventListener('click', openForm);
 	projectSubmitButton.addEventListener('click', closeForm);
@@ -50,40 +54,18 @@ function DOMInterface() {
 		addProjectButton.style.display = "block";
 	}
 
-	
-	//event delegation for adding margin to tasks
-	document.body.addEventListener( 'click', function ( event ) {
-		if( event.target.id == 'inputMenu') {
-			document.body.addEventListener( 'click', function ( event ) {
-				console.log(event);
-				// if( event.target.id == 'taskList') {
-				// 	console.log(event);
-				// 	// addMargin();
-				// 	// hideH1();
-				// };
-			});
-			// addMargin();
-			hideH1();
-		};
-	});
 
-	// function addMargin() {
-	// 	document.body.addEventListener( 'click', function ( event ) {
-	// 		console.log(event);
-	// 		// if( event.target.id == 'taskList') {
-	// 		// 	console.log(event);
-	// 		// 	// addMargin();
-	// 		// 	// hideH1();
-	// 		// };
-	// 	});
-		
-		// taskList.classList.toggle('addmarginAfterClick');
-	// }
+	function addMargin() {
+		console.log("add margin", taskList);
+		taskList.style.marginTop = null;
+		taskList.classList.toggle('removeMarginAfterClick');
+	}
 
 	function hideH1() {
 		console.log("h1 works");
 		let h1Ele = document.getElementsByTagName('h1')[0];
 		h1Ele.classList.toggle('hideH1');
+		
 	}
 
 	function addTask() {
@@ -94,7 +76,6 @@ function DOMInterface() {
 	function closeTaskForm() {
 		document.getElementById("myTasks").style.display = "none";
 	}
-
 
 }
 
