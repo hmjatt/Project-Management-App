@@ -428,7 +428,6 @@ h2 {
 
 #tasksContainer input[type="checkbox"] {
 	position: relative;
-
 	border: 2px solid var(--clr-mineShaft);
 	border-radius: 14px;
 	appearance: none;

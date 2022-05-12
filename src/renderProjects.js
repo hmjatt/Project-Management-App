@@ -32,50 +32,80 @@ function renderProjects() {
 
 
 	// create default tasks
-	tasksContainer.innerHTML = 
-							`
-								<div class="task">
-									<input type="checkbox" id="task-1" name="task-1" value="task"/>
-									<label for="task-1" data-content="Record todo list video that is long">
-										Record todo list video that is long
-									</label>
-								</div>
-			
-								<div class="task">
-									<input type="checkbox" id="task-2" name="task-2" value="task"/>
-									<label for="task-2" data-content="Another Task">
-										Another Task
-									</label>
-								</div>
-			
-								<div class="task">
-									<input type="checkbox" id="task-3" name="task-3" value="task"/>
-									<label for="task-3" data-content="Third Task">
-										Third Task
-									</label>
-								</div>
-							`;
+	let youtubeTasks = `
+						<div class="task">
+							<input type="checkbox" id="task-1" name="task-1" value="task"/>
+							<label for="task-1" data-content="Record todo list video that is long">
+								Record todo list video that is long
+							</label>
+						</div>
 
-	// div class="task">
-	// 					<input type="checkbox" id="task-1" name="task-1" value="task"/>
-	// 					<label for="task-1" data-content="Record todo list video that is long">
-	// 						Record todo list video that is long
-	// 					</label>
-	// 				</div>
+						<div class="task">
+							<input type="checkbox" id="task-2" name="task-2" value="task"/>
+							<label for="task-2" data-content="Another Task">
+								Another Task
+							</label>
+						</div>
 
-	// 				<div class="task">
-	// 					<input type="checkbox" id="task-2" name="task-2" value="task"/>
-	// 					<label for="task-2" data-content="Another Task">
-	// 						Another Task
-	// 					</label>
-	// 				</div>
+						<div class="task">
+							<input type="checkbox" id="task-3" name="task-3" value="task"/>
+							<label for="task-3" data-content="Third Task">
+								Third Task
+							</label>
+						</div>
+					`;
 
-	// 				<div class="task">
-	// 					<input type="checkbox" id="task-3" name="task-3" value="task"/>
-	// 					<label for="task-3" data-content="Third Task">
-	// 						Third Task
-	// 					</label>
-	// 				</div>
+	let workTasks = `
+						<div class="task">
+							<input type="checkbox" id="task-4" name="task-4" value="task"/>
+							<label for="task-4" data-content="Code a new project">
+								Code a new project
+							</label>
+						</div>
+
+						<div class="task">
+							<input type="checkbox" id="task-5" name="task-5" value="task"/>
+							<label for="task-5" data-content="Check E-mail">
+								Check E-mail
+							</label>
+						</div>
+
+						<div class="task">
+							<input type="checkbox" id="task-6" name="task-6" value="task"/>
+							<label for="task-6" data-content="Call John Doe">
+								Call John Doe
+							</label>
+						</div>
+					`;
+
+	let groceryTasks = `
+	
+						<div class="task">
+							<input type="checkbox" id="task-7" name="task-7" value="task"/>
+							<label for="task-7" data-content="Buy milk">
+								Buy milk
+							</label>
+						</div>
+
+						<div class="task">
+							<input type="checkbox" id="task-8" name="task-8" value="task"/>
+							<label for="task-8" data-content="Buy eggs">
+								Buy eggs
+							</label>
+						</div>
+
+						<div class="task">
+							<input type="checkbox" id="task-9" name="task-9" value="task"/>
+							<label for="task-9" data-content="Buy bread">
+								Buy bread
+							</label>
+						</div>
+					`;
+
+							
+
+
+	tasksContainer.innerHTML = `${youtubeTasks}`;
 
 
 	//select project
