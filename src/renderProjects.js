@@ -15,17 +15,17 @@ function renderProjects() {
 
 	let youtubeProject = document.createElement('li');
 	youtubeProject.classList.add('list-name', 'active-list');
-	youtubeProject.setAttribute('data-project', 'youtubeProjectTasks');
+	youtubeProject.setAttribute('data-project', 'Youtube');
 	youtubeProject.innerHTML = `<img class="list-img" src="../src/images/svg/list.svg" alt="list">` + `Youtube` + `<button class="deleteProjectBtn">X</button>`;
 
 	let workProject = document.createElement('li');
 	workProject.classList.add('list-name');
-	workProject.setAttribute('data-project', 'workProjectTasks');
+	workProject.setAttribute('data-project', 'Work');
 	workProject.innerHTML = `<img class="list-img" src="../src/images/svg/list.svg" alt="list">` + `Work` + `<button class="deleteProjectBtn">X</button>`;
 
 	let groceryProject = document.createElement('li');
 	groceryProject.classList.add('list-name');
-	groceryProject.setAttribute('data-project', 'groceryProjectTasks');
+	groceryProject.setAttribute('data-project', 'Grocery');
 	groceryProject.innerHTML = `<img class="list-img" src="../src/images/svg/list.svg" alt="list">` + `Grocery` + `<button class="deleteProjectBtn">X</button>`;
 
 	projectsContainer.append(youtubeProject, workProject, groceryProject);
@@ -118,7 +118,19 @@ function renderProjects() {
 			event.target.classList.toggle('active-list');
 			let projectName = event.target.getAttribute('data-project');
 			let projectTasks = document.querySelector(`[data-project="${projectName}"]`);
-			tasksContainer.innerHTML = `${projectTasks.innerHTML}`;
+
+			if(projectName == 'Youtube') {
+				tasksContainer.innerHTML = `${youtubeProjectTasks}`;
+				projectTitle.innerHTML = `${projectName}`;
+			} else if(projectName == 'Work') {
+				tasksContainer.innerHTML = `${workProjectTasks}`;
+				projectTitle.innerHTML = `${projectName}`;
+			} else if(projectName == 'Grocery') {
+				tasksContainer.innerHTML = `${groceryProjectTasks}`;
+				projectTitle.innerHTML = `${projectName}`;
+			}
+
+			// tasksContainer.innerHTML = `${projectTasks.innerHTML}`;
 			// tasksContainer.append(projectName);
 			// console.log(projectName);
 

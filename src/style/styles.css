@@ -220,6 +220,10 @@ h2 {
 	left: -200%;
 }
 
+.list-name {
+	cursor: pointer;
+}
+
 .list-img {
 	width: 1.7em;
 	padding-right: 10px;

@@ -24,6 +24,7 @@ function DOMInterface() {
 	let addTaskButton = document.getElementById('addTaskButton');
 	let taskSubmitButton = document.getElementById('taskSubmitButton');
 	let tasksContainer = document.getElementById('tasksContainer');
+	let projectTitle = document.getElementById('projectTitle');
 
 	
 	//git logo img
