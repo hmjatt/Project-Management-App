@@ -15,24 +15,24 @@ function renderProjects() {
 
 	let youtubeProject = document.createElement('li');
 	youtubeProject.classList.add('list-name', 'active-list');
-	youtubeProject.setAttribute('data-project', 'Youtube');
+	youtubeProject.setAttribute('data-project', 'youtubeProjectTasks');
 	youtubeProject.innerHTML = `<img class="list-img" src="../src/images/svg/list.svg" alt="list">` + `Youtube` + `<button class="deleteProjectBtn">X</button>`;
 
 	let workProject = document.createElement('li');
 	workProject.classList.add('list-name');
-	workProject.setAttribute('data-project', 'Work');
+	workProject.setAttribute('data-project', 'workProjectTasks');
 	workProject.innerHTML = `<img class="list-img" src="../src/images/svg/list.svg" alt="list">` + `Work` + `<button class="deleteProjectBtn">X</button>`;
 
 	let groceryProject = document.createElement('li');
 	groceryProject.classList.add('list-name');
-	groceryProject.setAttribute('data-project', 'Grocery');
+	groceryProject.setAttribute('data-project', 'groceryProjectTasks');
 	groceryProject.innerHTML = `<img class="list-img" src="../src/images/svg/list.svg" alt="list">` + `Grocery` + `<button class="deleteProjectBtn">X</button>`;
 
 	projectsContainer.append(youtubeProject, workProject, groceryProject);
 
 
 	// create default tasks
-	let youtubeTasks = `
+	let youtubeProjectTasks = `
 						<div class="task">
 							<input type="checkbox" id="task-1" name="task-1" value="task"/>
 							<label for="task-1" data-content="Record todo list video that is long">
@@ -55,7 +55,7 @@ function renderProjects() {
 						</div>
 					`;
 
-	let workTasks = `
+	let workProjectTasks = `
 						<div class="task">
 							<input type="checkbox" id="task-4" name="task-4" value="task"/>
 							<label for="task-4" data-content="Code a new project">
@@ -78,7 +78,7 @@ function renderProjects() {
 						</div>
 					`;
 
-	let groceryTasks = `
+	let groceryProjectTasks = `
 	
 						<div class="task">
 							<input type="checkbox" id="task-7" name="task-7" value="task"/>
@@ -105,10 +105,10 @@ function renderProjects() {
 							
 
 
-	tasksContainer.innerHTML = `${youtubeTasks}`;
+	// tasksContainer.innerHTML = `${youtubeTasks}`;
 
 
-	//select project
+	//select project and render its tasks
 	document.body.addEventListener( 'click', function ( event ) {
 		if( event.target.className == 'list-name' || event.target.className == 'list-name active-list' ) {
 			let allProjects = projectsContainer.children;
@@ -116,6 +116,11 @@ function renderProjects() {
 				project.classList.remove('active-list');
 			}
 			event.target.classList.toggle('active-list');
+			let projectName = event.target.getAttribute('data-project');
+			let projectTasks = document.querySelector(`[data-project="${projectName}"]`);
+			tasksContainer.innerHTML = `${projectTasks.innerHTML}`;
+			// tasksContainer.append(projectName);
+			// console.log(projectName);
 
 		};
 	});

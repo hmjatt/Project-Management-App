@@ -41,7 +41,7 @@ function createProjects() {
 
 		projectsContainer.append(project);
 
-		saveProjects();
+		// saveProjects();
 
 	}
 
