@@ -117,7 +117,7 @@ function renderProjects() {
 			}
 			event.target.classList.toggle('active-list');
 			let projectName = event.target.getAttribute('data-project');
-			let projectTasks = document.querySelector(`[data-project="${projectName}"]`);
+			// let projectTasks = document.querySelector(`[data-project="${projectName}"]`);
 
 			if(projectName == 'Youtube') {
 				tasksContainer.innerHTML = `${youtubeProjectTasks}`;
@@ -127,6 +127,9 @@ function renderProjects() {
 				projectTitle.innerHTML = `${projectName}`;
 			} else if(projectName == 'Grocery') {
 				tasksContainer.innerHTML = `${groceryProjectTasks}`;
+				projectTitle.innerHTML = `${projectName}`;
+			} else {
+				tasksContainer.innerHTML = `${youtubeProjectTasks}`;
 				projectTitle.innerHTML = `${projectName}`;
 			}
 

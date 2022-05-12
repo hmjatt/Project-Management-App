@@ -554,18 +554,27 @@ h2 {
 	}
 }
 
+@media (min-width: 768px) {
+	.todo-list{
+		margin-top: 7em;
+	}
+}
+
 @media (min-width: 1100px) {
 	#container {
 		margin-right: 0%;
 		margin-left: 0%;
 	}
 
-	
+	.todo-list{
+		margin-top: 7em;
+	}
+
 }
 
-@media (min-width: 1400px) {
+/* @media (min-width: 1400px) {
 	.todo-list{
 		margin-top: 0em;
 	}
-}
+} */
 

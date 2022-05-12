@@ -13,7 +13,10 @@ function deleteProject() {
 	
 	document.body.addEventListener( 'click', function ( event ) {
 		if( event.target.className == 'deleteProjectBtn' ) {
+
+			//delete project from DOM
 			// event.target.parentElement.remove();
+
 			// delete project from local storage
 			let projectToDelete = event.target.parentElement.getAttribute('data-project');
 
