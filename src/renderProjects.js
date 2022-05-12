@@ -31,6 +31,53 @@ function renderProjects() {
 	projectsContainer.append(youtubeProject, workProject, groceryProject);
 
 
+	// create default tasks
+	tasksContainer.innerHTML = 
+							`
+								<div class="task">
+									<input type="checkbox" id="task-1" name="task-1" value="task"/>
+									<label for="task-1" data-content="Record todo list video that is long">
+										Record todo list video that is long
+									</label>
+								</div>
+			
+								<div class="task">
+									<input type="checkbox" id="task-2" name="task-2" value="task"/>
+									<label for="task-2" data-content="Another Task">
+										Another Task
+									</label>
+								</div>
+			
+								<div class="task">
+									<input type="checkbox" id="task-3" name="task-3" value="task"/>
+									<label for="task-3" data-content="Third Task">
+										Third Task
+									</label>
+								</div>
+							`;
+
+	// div class="task">
+	// 					<input type="checkbox" id="task-1" name="task-1" value="task"/>
+	// 					<label for="task-1" data-content="Record todo list video that is long">
+	// 						Record todo list video that is long
+	// 					</label>
+	// 				</div>
+
+	// 				<div class="task">
+	// 					<input type="checkbox" id="task-2" name="task-2" value="task"/>
+	// 					<label for="task-2" data-content="Another Task">
+	// 						Another Task
+	// 					</label>
+	// 				</div>
+
+	// 				<div class="task">
+	// 					<input type="checkbox" id="task-3" name="task-3" value="task"/>
+	// 					<label for="task-3" data-content="Third Task">
+	// 						Third Task
+	// 					</label>
+	// 				</div>
+
+
 	//select project
 	document.body.addEventListener( 'click', function ( event ) {
 		if( event.target.className == 'list-name' || event.target.className == 'list-name active-list' ) {
@@ -57,6 +104,8 @@ function renderProjects() {
 		localStorage.setItem(groceryProject.getAttribute('data-project'), JSON.stringify(groceryProject));
 
 	}
+
+
 
 	
 }

@@ -23,6 +23,7 @@ function DOMInterface() {
 	//tasks
 	let addTaskButton = document.getElementById('addTaskButton');
 	let taskSubmitButton = document.getElementById('taskSubmitButton');
+	let tasksContainer = document.getElementById('tasksContainer');
 
 	
 	//git logo img
@@ -56,13 +57,11 @@ function DOMInterface() {
 
 
 	function addMargin() {
-		console.log("add margin", taskList);
 		taskList.style.marginTop = null;
 		taskList.classList.toggle('removeMarginAfterClick');
 	}
 
 	function hideH1() {
-		console.log("h1 works");
 		let h1Ele = document.getElementsByTagName('h1')[0];
 		h1Ele.classList.toggle('hideH1');
 		
