@@ -41,11 +41,18 @@ function createProjects() {
 
 		projectsContainer.append(project);
 
-		// saveProjects();
+		saveProjects();
 
 	}
 
-	//local storage
+	//add new projects to local storage
+	function saveProjects() {
+		let newProjects = [];
+
+		localStorage.setItem(projectInput.value, {});
+		console.log(localStorage);
+	}
+
 
 
 }

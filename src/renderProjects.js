@@ -141,9 +141,9 @@ function renderProjects() {
 	});
 
 
-	//add project to local storage
+	//add default projects to local storage
 
-	//default project
+	//default projects
 
 	getdefaultProjects();
 
