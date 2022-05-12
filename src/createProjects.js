@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', deleteProjects);
 
 function createProjects() {
 
-
 	newProjectForm.addEventListener('submit', addProject);
-	newProjectForm.addEventListener('submit', saveProjects);
+	// newProjectForm.addEventListener('submit', saveProjects);
+	// newProjectForm.addEventListener('submit', myfunction);
 
 	//create add projects fxn
 
@@ -21,9 +21,7 @@ function createProjects() {
 		if (projectName === null || projectName === '') return;
 		createProject(projectName);
 		projectInput.value = null;
-		// saveProjects();
 	}
-	let arr = ["task1", "task2", "task3", "task4", "task5"];
 
 	function createProject(names) {
 		let project = document.createElement('li');
@@ -43,29 +41,12 @@ function createProjects() {
 
 		projectsContainer.append(project);
 
-		
-		
-		localStorage.setItem(projectInput.value, arr);
-		
-		// saveProjects();
-		
+		saveProjects();
 
 	}
 
 	//local storage
-	const LOCAL_STORAGE_LIST_KEY = 'task.lists';
-	const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId';
-	// let projects = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || [];
-	// let selectedProjectId = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY);
-	let projects = localStorage.getItem(projectInput.value);
-	let selectedProjectId = localStorage.getItem(arr);
 
-	//save projects
-	function saveProjects() {
-		localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(projects));
-		localStorage.setItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY, selectedProjectId);
-		console.log(localStorage);
-	}
 
 }
 
