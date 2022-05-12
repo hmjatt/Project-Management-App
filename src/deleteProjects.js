@@ -16,10 +16,9 @@ function deleteProject() {
 			// event.target.parentElement.remove();
 			// delete project from local storage
 			let projectToDelete = event.target.parentElement.getAttribute('data-project');
-			toString(projectToDelete);
+
 			localStorage.removeItem(projectToDelete);
-			console.log(localStorage.getItem('defaultProjects'));
-			// console.log(localStorage.getItem('defaultProjects'), localStorage);
+			console.log(localStorage);
 		};
 	});
 

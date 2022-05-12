@@ -1,10 +1,10 @@
 import DOMInterface from './DOMInterface.js';
 import createProjects from './createProjects.js';
-// import deleteProjects from './deleteProjects.js';
+import deleteProjects from './deleteProjects.js';
 
 document.addEventListener('DOMContentLoaded', DOMInterface);
 document.addEventListener('DOMContentLoaded', createProjects);
-// document.addEventListener('DOMContentLoaded', deleteProjects);
+document.addEventListener('DOMContentLoaded', deleteProjects);
 
 
 
@@ -43,6 +43,7 @@ function renderProjects() {
 		};
 	});
 
+
 	//add project to local storage
 
 	//default project
@@ -50,30 +51,13 @@ function renderProjects() {
 	getdefaultProjects();
 
 	function getdefaultProjects() {
-	
 
 		localStorage.setItem(youtubeProject.getAttribute('data-project'), JSON.stringify(youtubeProject));
 		localStorage.setItem(workProject.getAttribute('data-project'), JSON.stringify(workProject));
 		localStorage.setItem(groceryProject.getAttribute('data-project'), JSON.stringify(groceryProject));
 
-		// sessionStorage.removeItem("Youtube");
-		// console.log(localStorage.getItem('defaultProjects'), localStorage);
-
 	}
 
-
-	//on pressing button delete project
-	
-	document.body.addEventListener( 'click', function ( event ) {
-		if( event.target.className == 'deleteProjectBtn' ) {
-			// event.target.parentElement.remove();
-			// delete project from local storage
-			let projectToDelete = event.target.parentElement.getAttribute('data-project');
-
-			localStorage.removeItem(projectToDelete);
-			console.log(localStorage);
-		};
-	});
 	
 }
 
