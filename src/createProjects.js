@@ -49,7 +49,7 @@ function createProjects() {
 	function saveProjects() {
 		let newProjects = [];
 
-		localStorage.setItem(projectInput.value, {});
+		localStorage.setItem(projectInput.value, JSON.stringify(newProjects));
 		console.log(localStorage);
 	}
 

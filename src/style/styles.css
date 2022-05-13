@@ -516,6 +516,10 @@ h2 {
 	transition: all 0.3s ease;
 }
 
+#noTasks{
+	font-size: 1.3em;
+}
+
 .delete-stuff {
 	display: flex;
 	flex-direction: column;}

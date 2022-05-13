@@ -105,7 +105,8 @@ function renderProjects() {
 							
 
 
-	// tasksContainer.innerHTML = `${youtubeTasks}`;
+	tasksContainer.innerHTML = `${youtubeProjectTasks}`;
+	projectTitle.innerText = "Youtube";
 
 
 	//select project and render its tasks
@@ -117,7 +118,11 @@ function renderProjects() {
 			}
 			event.target.classList.toggle('active-list');
 			let projectName = event.target.getAttribute('data-project');
+			console.log(event.target.getAttribute('data-project'));
 			// let projectTasks = document.querySelector(`[data-project="${projectName}"]`);
+
+			// tasksContainer.innerHTML = `${youtubeProjectTasks}`;
+			
 
 			if(projectName == 'Youtube') {
 				tasksContainer.innerHTML = `${youtubeProjectTasks}`;
@@ -129,8 +134,8 @@ function renderProjects() {
 				tasksContainer.innerHTML = `${groceryProjectTasks}`;
 				projectTitle.innerHTML = `${projectName}`;
 			} else {
-				tasksContainer.innerHTML = `${youtubeProjectTasks}`;
 				projectTitle.innerHTML = `${projectName}`;
+				tasksContainer.innerHTML = `<div id="noTasks" class="task">` + `No tasks for this project` + `</div>`;
 			}
 
 			// tasksContainer.innerHTML = `${projectTasks.innerHTML}`;
