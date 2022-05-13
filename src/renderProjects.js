@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', deleteProjects);
 
 function renderProjects() {
 
+	tasksContainer.innerHTML = '';
+
 
 	// create default projects
 
@@ -232,9 +234,6 @@ function renderProjects() {
 				tasksContainer.innerHTML = `<div id="noTasks" class="task">` + `No tasks for this project` + `</div>`;
 			}
 
-			// tasksContainer.innerHTML = `${projectTasks.innerHTML}`;
-			// tasksContainer.append(projectName);
-			// console.log(projectName);
 
 		};
 	});
@@ -242,71 +241,177 @@ function renderProjects() {
 
 	//add default projects to local storage
 
-	let defaultProjects = [];
-	defaultProjects.push(youtubeProject.getAttribute('data-project'), workProject.getAttribute('data-project'), groceryProject.getAttribute('data-project'));
-	localStorage.setItem('projects', JSON.stringify(defaultProjects));
 
-	
+
+	// let defaultProjects = [];
+	// defaultProjects.push(youtubeProject.getAttribute('data-project'), workProject.getAttribute('data-project'), groceryProject.getAttribute('data-project'));
+	// //get each item from defaultProjects array and push to local storage
+	// for (let project of defaultProjects) {
+	// 	localStorage.setItem(project, project);
+	// }
+	// localStorage.setItem(JSON.stringify(defaultProjects), JSON.stringify(defaultProjects));
 
 
 	//add default tasks to local storage
 
 	//default projects
 
-	let youtubeTasks = document.getElementsByClassName('youtube-task-label');
-	let workTasks = document.getElementsByClassName('work-task-label');
-	let groceryTasks = document.getElementsByClassName('grocery-task-label');
+	// let youtubeTasks = document.getElementsByClassName('youtube-task-label');
+	// let workTasks = document.getElementsByClassName('work-task-label');
+	// let groceryTasks = document.getElementsByClassName('grocery-task-label');
 
-	youtube.addEventListener('click', addYoutubeTasks);
-	work.addEventListener('click', addWorkTasks);
-	grocery.addEventListener('click', addGroceryTasks);
+	// youtube.addEventListener('click', addYoutubeTasks);
+	// work.addEventListener('click', addWorkTasks);
+	// grocery.addEventListener('click', addGroceryTasks);
 
 
-	function addYoutubeTasks() {
-		for (let task of youtubeTasks) {
-			let taskName = task.innerText;
-			let taskId = task.getAttribute('for');
-			let taskChecked = task.parentNode.firstChild.checked;
-			let taskObj = {
-				taskName: taskName,
-				taskId: taskId,
-				checked: taskChecked
-			};
-			let taskString = JSON.stringify(taskObj);
-			localStorage.setItem(taskId, taskString);
-		}
-	}
+	// function addYoutubeTasks() {
+	// 	for (let task of youtubeTasks) {
+	// 		let taskName = task.innerText;
+	// 		let taskId = task.getAttribute('for');
+	// 		let taskChecked = task.parentNode.firstChild.checked;
+	// 		let taskObj = {
+	// 			taskName: taskName,
+	// 			taskId: taskId,
+	// 			checked: taskChecked
+	// 		};
+	// 		let taskString = JSON.stringify(taskObj);
+	// 		localStorage.setItem(taskId, taskString);
+	// 	}
+	// }
 
-	function addWorkTasks() {
-		for (let task of workTasks) {
-			let taskName = task.innerText;
-			let taskId = task.getAttribute('for');
-			let taskChecked = task.parentNode.firstChild.checked;
-			let taskObj = {
-				taskName: taskName,
-				taskId: taskId,
-				checked: taskChecked
-			};
-			let taskString = JSON.stringify(taskObj);
-			localStorage.setItem(taskId, taskString);
-		}
-	}
+	// function addWorkTasks() {
+	// 	for (let task of workTasks) {
+	// 		let taskName = task.innerText;
+	// 		let taskId = task.getAttribute('for');
+	// 		let taskChecked = task.parentNode.firstChild.checked;
+	// 		let taskObj = {
+	// 			taskName: taskName,
+	// 			taskId: taskId,
+	// 			checked: taskChecked
+	// 		};
+	// 		let taskString = JSON.stringify(taskObj);
+	// 		localStorage.setItem(taskId, taskString);
+	// 	}
+	// }
 	
 
-	function addGroceryTasks() {
-		for (let task of groceryTasks) {
-			let taskName = task.innerText;
-			let taskId = task.getAttribute('for');
-			let taskChecked = task.parentNode.firstChild.checked;
-			let taskObj = {
-				taskName: taskName,
-				taskId: taskId,
-				checked: taskChecked
-			};
-			let taskString = JSON.stringify(taskObj);
-			localStorage.setItem(taskId, taskString);
+	// function addGroceryTasks() {
+	// 	for (let task of groceryTasks) {
+	// 		let taskName = task.innerText;
+	// 		let taskId = task.getAttribute('for');
+	// 		let taskChecked = task.parentNode.firstChild.checked;
+	// 		let taskObj = {
+	// 			taskName: taskName,
+	// 			taskId: taskId,
+	// 			checked: taskChecked
+	// 		};
+	// 		let taskString = JSON.stringify(taskObj);
+	// 		localStorage.setItem(taskId, taskString);
+	// 	}
+	// }
+
+
+
+	newProjectForm.addEventListener('submit', addProject);
+	// newProjectForm.addEventListener('submit', saveProjects);
+	// newProjectForm.addEventListener('submit', myfunction);
+
+
+	function addProject(event) {
+		event.preventDefault();
+		let newProject = projectInput.value;
+		let newProjectObj = {
+			projectName: newProject
+		};
+		let newProjectString = JSON.stringify(newProjectObj);
+		localStorage.setItem(newProject, newProjectString);
+		projectInput.value = '';
+		loadProjects();
+		
+	}
+
+
+
+
+
+	// add new project to local storage
+
+	function loadProjects() {
+		let projects = Object.keys(localStorage);
+		for (let project of projects) {
+			createProject(project);
 		}
 	}
+
+	function createProject(projectName) {
+		let project = document.createElement('li');
+		project.classList.add('list-name');
+		project.setAttribute('data-project', projectName);
+		
+		let projectImg = document.createElement('img');
+		projectImg.classList.add('list-img');
+		projectImg.src = '../src/images/svg/list.svg';
+		projectImg.alt = 'list';
+
+		let deleteProjectButton = document.createElement('button');
+		deleteProjectButton.classList.add('deleteProjectBtn');
+		deleteProjectButton.innerText = 'X';
+
+		project.append(projectImg, projectName, deleteProjectButton);
+
+		projectsContainer.append(project);
+	}
+
+
+
+
+
+
+
+
+
+
+	//create add projects fxn
+
+	// function addProject(e) {
+	// 	e.preventDefault();
+	// 	const projectName = projectInput.value;
+	// 	if (projectName === null || projectName === '') return;
+	// 	createProject(projectName);
+	// 	projectInput.value = null;
+	// }
+
+	// function createProject(names) {
+	// 	let project = document.createElement('li');
+	// 	project.classList.add('list-name');
+	// 	project.setAttribute('data-project', names);
+		
+	// 	let projectImg = document.createElement('img');
+	// 	projectImg.classList.add('list-img');
+	// 	projectImg.src = '../src/images/svg/list.svg';
+	// 	projectImg.alt = 'list';
+
+	// 	let deleteProjectButton = document.createElement('button');
+	// 	deleteProjectButton.classList.add('deleteProjectBtn');
+	// 	deleteProjectButton.innerText = 'X';
+
+	// 	project.append(projectImg, names, deleteProjectButton);
+
+	// 	projectsContainer.append(project);
+
+	// 	saveProjects();
+
+	// }
+
+	//add new projects to local storage
+	// function saveProjects() {
+	// 	// let newProjects = [];
+
+	// 	localStorage.setItem(projectInput.value, projectInput.value);
+	// 	console.log(localStorage);
+	// }
+
 
 	
 }

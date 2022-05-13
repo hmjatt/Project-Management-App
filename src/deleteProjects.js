@@ -18,9 +18,8 @@ function deleteProject() {
 			// event.target.parentElement.remove();
 
 			// delete project from local storage
-			let projectToDelete = event.target.parentElement.getAttribute('data-project');
+			// localStorage.removeItem(event.target.parentElement.dataset.project);
 
-			// localStorage.removeItem(projectToDelete);
 			console.log(localStorage);
 		};
 	});

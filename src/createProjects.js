@@ -1,60 +1,60 @@
-import DOMInterface from './DOMInterface.js';
-import deleteProjects from './deleteProjects.js';
+// import DOMInterface from './DOMInterface.js';
+// import deleteProjects from './deleteProjects.js';
 
-document.addEventListener('DOMContentLoaded', DOMInterface);
-document.addEventListener('DOMContentLoaded', deleteProjects);
-
-
+// document.addEventListener('DOMContentLoaded', DOMInterface);
+// document.addEventListener('DOMContentLoaded', deleteProjects);
 
 
-function createProjects() {
 
-	newProjectForm.addEventListener('submit', addProject);
-	// newProjectForm.addEventListener('submit', saveProjects);
-	// newProjectForm.addEventListener('submit', myfunction);
 
-	//create add projects fxn
+// function createProjects() {
 
-	function addProject(e) {
-		e.preventDefault();
-		const projectName = projectInput.value;
-		if (projectName === null || projectName === '') return;
-		createProject(projectName);
-		projectInput.value = null;
-	}
+// 	newProjectForm.addEventListener('submit', addProject);
+// 	// newProjectForm.addEventListener('submit', saveProjects);
+// 	// newProjectForm.addEventListener('submit', myfunction);
 
-	function createProject(names) {
-		let project = document.createElement('li');
-		project.classList.add('list-name');
-		project.setAttribute('data-project', names);
+// 	//create add projects fxn
+
+// 	function addProject(e) {
+// 		e.preventDefault();
+// 		const projectName = projectInput.value;
+// 		if (projectName === null || projectName === '') return;
+// 		createProject(projectName);
+// 		projectInput.value = null;
+// 	}
+
+// 	function createProject(names) {
+// 		let project = document.createElement('li');
+// 		project.classList.add('list-name');
+// 		project.setAttribute('data-project', names);
 		
-		let projectImg = document.createElement('img');
-		projectImg.classList.add('list-img');
-		projectImg.src = '../src/images/svg/list.svg';
-		projectImg.alt = 'list';
+// 		let projectImg = document.createElement('img');
+// 		projectImg.classList.add('list-img');
+// 		projectImg.src = '../src/images/svg/list.svg';
+// 		projectImg.alt = 'list';
 
-		let deleteProjectButton = document.createElement('button');
-		deleteProjectButton.classList.add('deleteProjectBtn');
-		deleteProjectButton.innerText = 'X';
+// 		let deleteProjectButton = document.createElement('button');
+// 		deleteProjectButton.classList.add('deleteProjectBtn');
+// 		deleteProjectButton.innerText = 'X';
 
-		project.append(projectImg, names, deleteProjectButton);
+// 		project.append(projectImg, names, deleteProjectButton);
 
-		projectsContainer.append(project);
+// 		projectsContainer.append(project);
 
-		saveProjects();
+// 		saveProjects();
 
-	}
+// 	}
 
-	//add new projects to local storage
-	function saveProjects() {
-		let newProjects = [];
+// 	//add new projects to local storage
+// 	function saveProjects() {
+// 		// let newProjects = [];
 
-		localStorage.setItem(projectInput.value, {});
-		console.log(localStorage);
-	}
+// 		localStorage.setItem(projectInput.value, projectInput.value);
+// 		console.log(localStorage);
+// 	}
 
 
 
-}
+// }
 
-export default createProjects;
+// export default createProjects;
