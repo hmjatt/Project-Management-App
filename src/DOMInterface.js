@@ -25,6 +25,9 @@ function DOMInterface() {
 	let taskSubmitButton = document.getElementById('taskSubmitButton');
 	let tasksContainer = document.getElementById('tasksContainer');
 	let projectTitle = document.getElementById('projectTitle');
+	// let youtubeTasks = document.getElementsByClassName('youtube-task-label');
+	// let workTasks = document.getElementsByClassName('work-task-label');
+	// let groceryTasks = document.getElementsByClassName('grocery-task-label');
 
 	
 	//git logo img

@@ -43,6 +43,7 @@ function renderProjects() {
 	youtubeProjectTask1Input.setAttribute('value', 'task');
 
 	let youtubeProjectTask1Label = document.createElement('label');
+	youtubeProjectTask1Label.classList.add('youtube-task-label');
 	youtubeProjectTask1Label.setAttribute('for', 'task-1');
 	youtubeProjectTask1Label.setAttribute('data-content', 'Record todo list video that is long');
 	youtubeProjectTask1Label.innerText = 'Record todo list video that is long';
@@ -59,6 +60,7 @@ function renderProjects() {
 	youtubeProjectTask2Input.setAttribute('value', 'task');
 
 	let youtubeProjectTask2Label = document.createElement('label');
+	youtubeProjectTask2Label.classList.add('youtube-task-label');
 	youtubeProjectTask2Label.setAttribute('for', 'task-2');
 	youtubeProjectTask2Label.setAttribute('data-content', 'Subscribe to youtube channel');
 	youtubeProjectTask2Label.innerText = 'Subscribe to youtube channel';
@@ -75,6 +77,7 @@ function renderProjects() {
 	youtubeProjectTask3Input.setAttribute('value', 'task');
 
 	let youtubeProjectTask3Label = document.createElement('label');
+	youtubeProjectTask3Label.classList.add('youtube-task-label');
 	youtubeProjectTask3Label.setAttribute('for', 'task-3');
 	youtubeProjectTask3Label.setAttribute('data-content', 'Like Video');
 	youtubeProjectTask3Label.innerText = 'Like Video';
@@ -93,6 +96,7 @@ function renderProjects() {
 	workProjectTask1Input.setAttribute('value', 'task');
 
 	let workProjectTask1Label = document.createElement('label');
+	workProjectTask1Label.classList.add('work-task-label');
 	workProjectTask1Label.setAttribute('for', 'task-4');
 	workProjectTask1Label.setAttribute('data-content', 'Create a new project');
 	workProjectTask1Label.innerText = 'Create a new project';
@@ -109,6 +113,7 @@ function renderProjects() {
 	workProjectTask2Input.setAttribute('value', 'task');
 
 	let workProjectTask2Label = document.createElement('label');
+	workProjectTask2Label.classList.add('work-task-label');
 	workProjectTask2Label.setAttribute('for', 'task-5');
 	workProjectTask2Label.setAttribute('data-content', 'Check Email');
 	workProjectTask2Label.innerText = 'Check Email';
@@ -125,6 +130,7 @@ function renderProjects() {
 	workProjectTask3Input.setAttribute('value', 'task');
 
 	let workProjectTask3Label = document.createElement('label');
+	workProjectTask3Label.classList.add('work-task-label');
 	workProjectTask3Label.setAttribute('for', 'task-6');
 	workProjectTask3Label.setAttribute('data-content', 'Call John Doe');
 	workProjectTask3Label.innerText = 'Call John Doe';
@@ -142,6 +148,7 @@ function renderProjects() {
 	groceryProjectTask1Input.setAttribute('value', 'task');
 
 	let groceryProjectTask1Label = document.createElement('label');
+	groceryProjectTask1Label.classList.add('grocery-task-label');
 	groceryProjectTask1Label.setAttribute('for', 'task-7');
 	groceryProjectTask1Label.setAttribute('data-content', 'Buy milk');
 	groceryProjectTask1Label.innerText = 'Buy milk';
@@ -158,6 +165,7 @@ function renderProjects() {
 	groceryProjectTask2Input.setAttribute('value', 'task');
 
 	let groceryProjectTask2Label = document.createElement('label');
+	groceryProjectTask2Label.classList.add('grocery-task-label');
 	groceryProjectTask2Label.setAttribute('for', 'task-8');
 	groceryProjectTask2Label.setAttribute('data-content', 'Buy bread');
 	groceryProjectTask2Label.innerText = 'Buy bread';
@@ -174,6 +182,7 @@ function renderProjects() {
 	groceryProjectTask3Input.setAttribute('value', 'task');
 
 	let groceryProjectTask3Label = document.createElement('label');
+	groceryProjectTask3Label.classList.add('grocery-task-label');
 	groceryProjectTask3Label.setAttribute('for', 'task-9');
 	groceryProjectTask3Label.setAttribute('data-content', 'Buy eggs');
 	groceryProjectTask3Label.innerText = 'Buy eggs';
@@ -236,9 +245,63 @@ function renderProjects() {
 
 	function getdefaultProjects() {
 
-		localStorage.setItem(youtubeProject.getAttribute('data-project'), JSON.stringify(youtubeProject));
-		localStorage.setItem(workProject.getAttribute('data-project'), JSON.stringify(workProject));
-		localStorage.setItem(groceryProject.getAttribute('data-project'), JSON.stringify(groceryProject));
+		
+		
+		
+
+		// let youtubeProjectTasks = document.querySelector('[data-project="Youtube"]');
+
+		let youtubeTasks = document.getElementsByClassName('youtube-task-label');
+
+		for (let i = 0; i < youtubeTasks.length; i++) {
+			let task = youtubeTasks[i];
+			let taskName = task.getAttribute('data-content');
+			let taskId = task.getAttribute('for');
+			let taskChecked = task.parentNode.firstChild.checked;
+			let taskObj = {
+				name: taskName,
+				id: taskId,
+				checked: taskChecked
+			};
+			localStorage.setItem(youtubeProject.getAttribute('data-project'), JSON.stringify(taskObj));
+		}
+
+
+		let workTasks = document.getElementsByClassName('work-task-label');
+
+		for (let i = 0; i < workTasks.length; i++) {
+			let task = workTasks[i];
+			let taskName = task.getAttribute('data-content');
+			let taskId = task.getAttribute('for');
+			let taskChecked = task.parentNode.firstChild.checked;
+			let taskObj = {
+				name: taskName,
+				id: taskId,
+				checked: taskChecked
+			};
+			localStorage.setItem(taskId, JSON.stringify(taskObj));
+		}
+
+		let groceryTasks = document.getElementsByClassName('grocery-task-label');
+
+		for (let i = 0; i < groceryTasks.length; i++) {
+			let task = groceryTasks[i];
+			let taskName = task.getAttribute('data-content');
+			let taskId = task.getAttribute('for');
+			let taskChecked = task.parentNode.firstChild.checked;
+			let taskObj = {
+				name: taskName,
+				id: taskId,
+				checked: taskChecked
+			};
+			localStorage.setItem(taskId, JSON.stringify(taskObj));
+		}
+		// console.log(youtubeTasks);
+
+
+		// localStorage.setItem(youtubeProject.getAttribute('data-project'), JSON.stringify(youtubeProject));
+		// localStorage.setItem(workProject.getAttribute('data-project'), JSON.stringify(workProject));
+		// localStorage.setItem(groceryProject.getAttribute('data-project'), JSON.stringify(groceryProject));
 
 	}
 
