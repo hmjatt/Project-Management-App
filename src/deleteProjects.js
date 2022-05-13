@@ -15,10 +15,10 @@ function deleteProject() {
 		if( event.target.className == 'deleteProjectBtn' ) {
 
 			//delete project from DOM
-			// event.target.parentElement.remove();
+			event.target.parentElement.remove();
 
 			// delete project from local storage
-			// localStorage.removeItem(event.target.parentElement.dataset.project);
+			localStorage.removeItem(event.target.parentElement.dataset.project);
 
 			console.log(localStorage);
 		};
