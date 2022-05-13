@@ -24,6 +24,8 @@ function DOMInterface() {
 	let taskSubmitButton = document.getElementById('taskSubmitButton');
 	let tasksContainer = document.getElementById('tasksContainer');
 	let projectTitle = document.getElementById('projectTitle');
+	let newTaskForm = document.getElementById('newTaskForm');
+	let taskInput = document.getElementById('taskInput');
 
 
 	
@@ -75,6 +77,7 @@ function DOMInterface() {
 
 	function closeTaskForm() {
 		document.getElementById("myTasks").style.display = "none";
+		addTaskButton.style.display = "block";
 	}
 
 }

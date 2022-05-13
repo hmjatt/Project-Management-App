@@ -1,4 +1,5 @@
 import DOMInterface from './DOMInterface.js';
+import renderTasks from './renderTasks.js';
 // import createProjects from './createProjects.js';
 // import deleteProjects from './deleteProjects.js';
 
@@ -211,7 +212,36 @@ function renderProjects() {
 			console.log(event.target.getAttribute('data-project'));
 
 			
-			//render tasks of selected project
+			// //render tasks of selected project
+			// if(projectName == 'Youtube') {
+			// 	tasksContainer.innerHTML = '';
+			// 	projectTitle.innerHTML = '';
+			// 	tasksContainer.append(youtubeProjectTask1, youtubeProjectTask2, youtubeProjectTask3);
+			// 	projectTitle.append(youtubeProject.getAttribute('data-project'));
+			// } else if(projectName == 'Work') {
+			// 	tasksContainer.innerHTML = '';
+			// 	projectTitle.innerHTML = '';
+			// 	tasksContainer.append(workProjectTask1, workProjectTask2, workProjectTask3);
+			// 	projectTitle.append(workProject.getAttribute('data-project'));
+			// } else if(projectName == 'Grocery') {
+			// 	tasksContainer.innerHTML = '';
+			// 	projectTitle.innerHTML = '';
+			// 	tasksContainer.append(groceryProjectTask1, groceryProjectTask2, groceryProjectTask3);
+			// 	projectTitle.append(groceryProject.getAttribute('data-project'));
+
+			// } else if (){
+			// 	// //if a project has no tasks	
+			// 	// tasksContainer.innerHTML = '';
+			// 	// projectTitle.innerHTML = '';
+			// 	// projectTitle.append(projectName);
+
+
+
+			// 	// projectTitle.innerHTML = `${projectName}`;
+			// 	// tasksContainer.innerHTML = `<div id="noTasks" class="task">` + `No tasks for this project` + `</div>`;
+			// }
+
+			// render tasks of selected project
 			if(projectName == 'Youtube') {
 				tasksContainer.innerHTML = '';
 				projectTitle.innerHTML = '';
@@ -227,10 +257,18 @@ function renderProjects() {
 				projectTitle.innerHTML = '';
 				tasksContainer.append(groceryProjectTask1, groceryProjectTask2, groceryProjectTask3);
 				projectTitle.append(groceryProject.getAttribute('data-project'));
+
 			} else {
-				projectTitle.innerHTML = `${projectName}`;
+				
+				tasksContainer.innerHTML = '';
+				projectTitle.innerHTML = '';
+				projectTitle.append(projectName);
+				//if a project has no tasks
 				tasksContainer.innerHTML = `<div id="noTasks" class="task">` + `No tasks for this project` + `</div>`;
+				//if a project has tasks render them
+
 			}
+				
 
 
 		};
