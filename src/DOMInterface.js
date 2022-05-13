@@ -1,4 +1,3 @@
-// import { node } from 'webpack';
 import gitImage from './images/git-logo.png';
 
 function DOMInterface() {

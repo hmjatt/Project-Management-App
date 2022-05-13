@@ -1,8 +1,8 @@
 import DOMInterface from './DOMInterface.js';
-import deleteProjects from './deleteProjects.js';
+// import deleteProjects from './deleteProjects.js';
 
 document.addEventListener('DOMContentLoaded', DOMInterface);
-document.addEventListener('DOMContentLoaded', deleteProjects);
+// document.addEventListener('DOMContentLoaded', deleteProjects);
 
 
 
@@ -25,8 +25,6 @@ function createProjects() {
 		console.log(localStorage);
 		projectInput.value = '';
 
-		
-
 		loadProjects();
 		
 	}
@@ -44,20 +42,9 @@ function createProjects() {
 				createProject(project);
 			}
 		});
-		
-
-		// for (let project of projects) {
-		// 	//if project already exists, don't add it again
-			
-		// 	createProject(project);
-		// }
 	}
 
 	function createProject(projectName) {
-		// if project already exists, don't add it again
-		
-
-
 
 		let project = document.createElement('li');
 		project.classList.add('list-name');
@@ -75,10 +62,7 @@ function createProjects() {
 
 		project.append(projectImg, projectName, deleteProjectButton);
 
-		projectsContainer.append(project);
-
-		
-
+		projectsContainer.prepend(project);
 
 	}
 
