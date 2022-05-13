@@ -15,16 +15,19 @@ function renderProjects() {
 
 	let youtubeProject = document.createElement('li');
 	youtubeProject.classList.add('list-name', 'active-list');
+	youtubeProject.id = 'youtube';
 	youtubeProject.setAttribute('data-project', 'Youtube');
 	youtubeProject.innerHTML = `<img class="list-img" src="../src/images/svg/list.svg" alt="list">` + `Youtube` + `<button class="deleteProjectBtn">X</button>`;
 
 	let workProject = document.createElement('li');
 	workProject.classList.add('list-name');
+	workProject.id = 'work';
 	workProject.setAttribute('data-project', 'Work');
 	workProject.innerHTML = `<img class="list-img" src="../src/images/svg/list.svg" alt="list">` + `Work` + `<button class="deleteProjectBtn">X</button>`;
 
 	let groceryProject = document.createElement('li');
 	groceryProject.classList.add('list-name');
+	groceryProject.id = 'grocery';
 	groceryProject.setAttribute('data-project', 'Grocery');
 	groceryProject.innerHTML = `<img class="list-img" src="../src/images/svg/list.svg" alt="list">` + `Grocery` + `<button class="deleteProjectBtn">X</button>`;
 
@@ -239,73 +242,71 @@ function renderProjects() {
 
 	//add default projects to local storage
 
+	let defaultProjects = [];
+	defaultProjects.push(youtubeProject.getAttribute('data-project'), workProject.getAttribute('data-project'), groceryProject.getAttribute('data-project'));
+	localStorage.setItem('projects', JSON.stringify(defaultProjects));
+
+	
+
+
+	//add default tasks to local storage
+
 	//default projects
 
-	getdefaultProjects();
+	let youtubeTasks = document.getElementsByClassName('youtube-task-label');
+	let workTasks = document.getElementsByClassName('work-task-label');
+	let groceryTasks = document.getElementsByClassName('grocery-task-label');
 
-	function getdefaultProjects() {
+	youtube.addEventListener('click', addYoutubeTasks);
+	work.addEventListener('click', addWorkTasks);
+	grocery.addEventListener('click', addGroceryTasks);
 
-		
-		
-		
 
-		// let youtubeProjectTasks = document.querySelector('[data-project="Youtube"]');
-
-		let youtubeTasks = document.getElementsByClassName('youtube-task-label');
-
-		for (let i = 0; i < youtubeTasks.length; i++) {
-			let task = youtubeTasks[i];
-			let taskName = task.getAttribute('data-content');
+	function addYoutubeTasks() {
+		for (let task of youtubeTasks) {
+			let taskName = task.innerText;
 			let taskId = task.getAttribute('for');
 			let taskChecked = task.parentNode.firstChild.checked;
 			let taskObj = {
-				name: taskName,
-				id: taskId,
+				taskName: taskName,
+				taskId: taskId,
 				checked: taskChecked
 			};
-			localStorage.setItem(youtubeProject.getAttribute('data-project'), JSON.stringify(taskObj));
+			let taskString = JSON.stringify(taskObj);
+			localStorage.setItem(taskId, taskString);
 		}
-
-
-		let workTasks = document.getElementsByClassName('work-task-label');
-
-		for (let i = 0; i < workTasks.length; i++) {
-			let task = workTasks[i];
-			let taskName = task.getAttribute('data-content');
-			let taskId = task.getAttribute('for');
-			let taskChecked = task.parentNode.firstChild.checked;
-			let taskObj = {
-				name: taskName,
-				id: taskId,
-				checked: taskChecked
-			};
-			localStorage.setItem(taskId, JSON.stringify(taskObj));
-		}
-
-		let groceryTasks = document.getElementsByClassName('grocery-task-label');
-
-		for (let i = 0; i < groceryTasks.length; i++) {
-			let task = groceryTasks[i];
-			let taskName = task.getAttribute('data-content');
-			let taskId = task.getAttribute('for');
-			let taskChecked = task.parentNode.firstChild.checked;
-			let taskObj = {
-				name: taskName,
-				id: taskId,
-				checked: taskChecked
-			};
-			localStorage.setItem(taskId, JSON.stringify(taskObj));
-		}
-		// console.log(youtubeTasks);
-
-
-		// localStorage.setItem(youtubeProject.getAttribute('data-project'), JSON.stringify(youtubeProject));
-		// localStorage.setItem(workProject.getAttribute('data-project'), JSON.stringify(workProject));
-		// localStorage.setItem(groceryProject.getAttribute('data-project'), JSON.stringify(groceryProject));
-
 	}
 
+	function addWorkTasks() {
+		for (let task of workTasks) {
+			let taskName = task.innerText;
+			let taskId = task.getAttribute('for');
+			let taskChecked = task.parentNode.firstChild.checked;
+			let taskObj = {
+				taskName: taskName,
+				taskId: taskId,
+				checked: taskChecked
+			};
+			let taskString = JSON.stringify(taskObj);
+			localStorage.setItem(taskId, taskString);
+		}
+	}
+	
 
+	function addGroceryTasks() {
+		for (let task of groceryTasks) {
+			let taskName = task.innerText;
+			let taskId = task.getAttribute('for');
+			let taskChecked = task.parentNode.firstChild.checked;
+			let taskObj = {
+				taskName: taskName,
+				taskId: taskId,
+				checked: taskChecked
+			};
+			let taskString = JSON.stringify(taskObj);
+			localStorage.setItem(taskId, taskString);
+		}
+	}
 
 	
 }

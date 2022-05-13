@@ -25,6 +25,10 @@ function DOMInterface() {
 	let taskSubmitButton = document.getElementById('taskSubmitButton');
 	let tasksContainer = document.getElementById('tasksContainer');
 	let projectTitle = document.getElementById('projectTitle');
+	let youtube = document.getElementById('youtube');
+	let work = document.getElementById('work');
+	let grocery = document.getElementById('grocery');
+
 	// let youtubeTasks = document.getElementsByClassName('youtube-task-label');
 	// let workTasks = document.getElementsByClassName('work-task-label');
 	// let groceryTasks = document.getElementsByClassName('grocery-task-label');
