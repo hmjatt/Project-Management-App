@@ -29,11 +29,10 @@ function createTasks() {
 				event.preventDefault();
 				let newTask = taskInput.value;
 				let newTaskObj = {
-					taskName: newTask
+					newTask: newTask
 				};
 				let newTaskString = JSON.stringify(newTaskObj);
 				localStorage.setItem(projectName, newTaskString);
-				console.log(localStorage);
 				taskInput.value = '';
 
 				loadTasks();
@@ -41,15 +40,20 @@ function createTasks() {
 
 			//load tasks when new task is added
 			function loadTasks() {
-				let tasks = Object.keys(localStorage);
-				tasks.forEach(function (task) {
-					//if task already exists, don't add it again
-					if (document.getElementById(task)) {
-						return;
-					} else {
-						createTask(task);
-					}
-				});
+				let tasks = localStorage.getItem(projectName);
+				console.log(typeof(tasks));
+				// tasks.forEach(function (task) {
+				// 	//if task already exists, don't add it again
+				// 	// if (document.getElementById(task)) {
+				// 	// 	return;
+				// 	// } else {
+				// 	// 	createTask(task);
+				// 	// }
+
+					
+				// });
+				createTask(tasks);
+				
 			}
 
 			function createTask(taskName) {
@@ -70,7 +74,6 @@ function createTasks() {
 				// task.appendChild(taskImg);
 				// task.appendChild(deleteTaskButton);
 				// taskList.appendChild(task);
-
 				let task = document.createElement('div');
 				task.classList.add('task');
 				let taskInput = document.createElement('input');
@@ -87,6 +90,22 @@ function createTasks() {
 				taskLabel.setAttribute('data-task', taskName);
 
 				task.append(taskInput, taskLabel);
+
+				let allTasks = [];
+
+				
+				allTasks.push(task);
+
+
+				console.log(allTasks, task);
+				
+				
+				localStorage.setItem(projectName, task);
+
+				// localStorage.setItem(projectName, task);
+
+				console.log(localStorage);
+				tasksContainer.appendChild(task);
 
 				// 	let taskLabel = document.createElement('label');
 				// 	// taskLabel.classList.add('youtube-task-label');

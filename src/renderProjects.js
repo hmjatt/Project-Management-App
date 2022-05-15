@@ -264,7 +264,7 @@ function renderProjects() {
 				projectTitle.innerHTML = '';
 				projectTitle.append(projectName);
 				//if a project has no tasks
-				tasksContainer.innerHTML = `<div id="noTasks" class="task">` + `No tasks for this project` + `</div>`;
+				// tasksContainer.innerHTML = `<div id="noTasks" class="task">` + `No tasks for this project` + `</div>`;
 				//if a project has tasks render them
 
 			}
