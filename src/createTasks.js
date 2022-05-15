@@ -91,34 +91,12 @@ function createTasks() {
 
 				task.append(taskInput, taskLabel);
 
-				let allTasks = [];
-
-				
-				allTasks.push(task);
-
-
-				console.log(allTasks, task);
-				
-				
-				localStorage.setItem(projectName, task);
-
-				// localStorage.setItem(projectName, task);
-
-				console.log(localStorage);
-				tasksContainer.appendChild(task);
-
-				// 	let taskLabel = document.createElement('label');
-				// 	// taskLabel.classList.add('youtube-task-label');
-				// 	taskLabel.setAttribute('for', taskName);
-				// 	taskLabel.setAttribute('data-content', taskName);
-				// 	taskLabel.innerText = taskName;
-
-				// 	task.append(taskInput, taskLabel);
+				//add each task to array
+				let taskArray = [];
+				taskArray.push(task);
 
 
 
-
-				// deleteTaskButton.addEventListener('click', deleteTask);
 			}
 
 
