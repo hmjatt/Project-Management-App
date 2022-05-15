@@ -200,6 +200,34 @@ function renderProjects() {
 	projectTitle.append(youtubeProject.getAttribute('data-project'));
 
 
+
+	
+
+
+
+
+	// // check if tasks are checked and add class to label
+	// let allTasks = document.querySelectorAll('.task');
+	// for (let task of allTasks) {
+		
+	// 	let taskInput = task.querySelector('input');
+	// 	console.log(taskInput.checked);
+	// 	// if(taskInput.checked) {
+	// 	// 	task.querySelector('label').classList.toggle('checked');
+	// 	// }
+	// }
+	
+
+
+	// let defaultProjects = {
+
+
+	// 	{'youtube': [youtubeProjectTask1Label.getAttribute('data-content'), youtubeProjectTask2Label.getAttribute('data-content'), youtubeProjectTask3Label.getAttribute('data-content'), ],
+	// 	'work': [workProjectTask1Label.getAttribute('data-content'), workProjectTask2Label.getAttribute('data-content'), workProjectTask3Label.getAttribute('data-content')],
+	// 	'grocery': [groceryProjectTask1Label.getAttribute('data-content'), groceryProjectTask2Label.getAttribute('data-content'), groceryProjectTask3Label.getAttribute('data-content')]
+	// };
+
+
 	//select project and render its tasks
 	document.body.addEventListener( 'click', function ( event ) {
 		if( event.target.className == 'list-name' || event.target.className == 'list-name active-list' ) {
@@ -209,37 +237,58 @@ function renderProjects() {
 			}
 			event.target.classList.toggle('active-list');
 			let projectName = event.target.getAttribute('data-project');
-			// console.log(event.target.getAttribute('data-project'));
 
-			
-			// //render tasks of selected project
-			// if(projectName == 'Youtube') {
-			// 	tasksContainer.innerHTML = '';
-			// 	projectTitle.innerHTML = '';
-			// 	tasksContainer.append(youtubeProjectTask1, youtubeProjectTask2, youtubeProjectTask3);
-			// 	projectTitle.append(youtubeProject.getAttribute('data-project'));
-			// } else if(projectName == 'Work') {
-			// 	tasksContainer.innerHTML = '';
-			// 	projectTitle.innerHTML = '';
-			// 	tasksContainer.append(workProjectTask1, workProjectTask2, workProjectTask3);
-			// 	projectTitle.append(workProject.getAttribute('data-project'));
-			// } else if(projectName == 'Grocery') {
-			// 	tasksContainer.innerHTML = '';
-			// 	projectTitle.innerHTML = '';
-			// 	tasksContainer.append(groceryProjectTask1, groceryProjectTask2, groceryProjectTask3);
-			// 	projectTitle.append(groceryProject.getAttribute('data-project'));
+			// add default project to local storage with none selected
 
-			// } else if (){
-			// 	// //if a project has no tasks	
-			// 	// tasksContainer.innerHTML = '';
-			// 	// projectTitle.innerHTML = '';
-			// 	// projectTitle.append(projectName);
+			let defaultProjects = {
+				'youtube': {
+					'task-1': {
+						'checked': false,
+						'label':'Record todo list video that is long'
+					},
+					'task-2': {
+						'checked': false,
+						'label':'Subscribe to youtube channel'
+					},
+					'task-3': {
+						'checked': false,
+						'label':'Like Video'
+					}
 
+				},
+				'work': {
+					'task-4': {
+						'checked': false,
+						'label':'Create a new project'
+					},
+					'task-5': {
+						'checked': false,
+						'label':'Check Email'
+					},
+					'task-6': {
+						'checked': false,
+						'label':'Call John Doe'
+					}
+				},
+				'grocery': {
+					'task-7': {
+						'checked': false,
+						'label':'Buy milk'
+					},
+					'task-8': {
+						'checked': false,
+						'label':'Buy bread'
+					},
+					'task-9': {
+						'checked': false,
+						'label':'Buy eggs'
+					}
+				}
 
+				
+			};
+			console.log(defaultProjects['youtube']['task-1']['checked']);
 
-			// 	// projectTitle.innerHTML = `${projectName}`;
-			// 	// tasksContainer.innerHTML = `<div id="noTasks" class="task">` + `No tasks for this project` + `</div>`;
-			// }
 
 			// render tasks of selected project
 			if(projectName == 'Youtube') {
@@ -247,6 +296,47 @@ function renderProjects() {
 				projectTitle.innerHTML = '';
 				tasksContainer.append(youtubeProjectTask1, youtubeProjectTask2, youtubeProjectTask3);
 				projectTitle.append(youtubeProject.getAttribute('data-project'));
+
+				//check if tasks are checked and add class to label
+				let allTasks = document.querySelectorAll('.task');
+				for (let task of allTasks) {
+					
+					let tasksInput = task.querySelector('input');
+					console.log(tasksInput.checked);
+					if(tasksInput.checked) {
+						task.querySelector('label').classList.toggle('checked');
+						//store checked tasks to defaultProjects object
+						
+						defaultProjects[projectName][tasksInput.id][checked] = true;
+						console.log(defaultProjects);
+
+					}
+				}
+
+
+				
+				
+
+
+
+
+				// //check if task is checked change it in local storage
+				// let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+				// checkboxes.forEach(checkbox => {
+				// 	checkbox.addEventListener('click', () => {
+				// 		let project = checkbox.parentElement.parentElement.parentElement.parentElement.getAttribute('data-project');
+				// 		let task = checkbox.parentElement.parentElement.getAttribute('data-task');
+				// 		let checked = checkbox.checked;
+				// 		let projects = JSON.parse(localStorage.getItem('defaultProjects'));
+				// 		console.log(projects['youtube']);
+				// 		projects[project][task]['checked'] = checked;
+				// 		localStorage.setItem('defaultProjects', JSON.stringify(projects));
+				// 		console.log(JSON.parse(localStorage.getItem('defaultProjects')));
+				// 	});
+				// });
+
+
+
 			} else if(projectName == 'Work') {
 				tasksContainer.innerHTML = '';
 				projectTitle.innerHTML = '';
@@ -268,6 +358,11 @@ function renderProjects() {
 				//if a project has tasks render them
 
 			}
+
+				
+		//add default projects to local storage
+		localStorage.setItem('defaultProjects', JSON.stringify(defaultProjects));
+		console.log(JSON.parse(localStorage.getItem('defaultProjects')));
 				
 
 
