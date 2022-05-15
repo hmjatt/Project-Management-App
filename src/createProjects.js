@@ -16,16 +16,24 @@ function createProjects() {
 	// add new project to local storage
 	function addProject(event) {
 		event.preventDefault();
-		let newProject = projectInput.value;
-		let newProjectObj = {
-			projectName: newProject
-		};
-		let newProjectString = JSON.stringify(newProjectObj);
-		localStorage.setItem(newProject, newProjectString);
-		console.log(localStorage);
-		projectInput.value = '';
 
-		loadProjects();
+		//if input is empty, don't add project
+		if (projectInput.value === '') {
+			return;
+		} else {
+			let newProject = projectInput.value;
+			let newProjectObj = {
+				projectName: newProject
+			};
+			let newProjectString = JSON.stringify(newProjectObj);
+			localStorage.setItem(newProject, newProjectString);
+			console.log(localStorage);
+			projectInput.value = '';
+
+			loadProjects();
+		}
+
+		
 		
 	}
 

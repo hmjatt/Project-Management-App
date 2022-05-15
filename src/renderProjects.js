@@ -209,7 +209,7 @@ function renderProjects() {
 			}
 			event.target.classList.toggle('active-list');
 			let projectName = event.target.getAttribute('data-project');
-			console.log(event.target.getAttribute('data-project'));
+			// console.log(event.target.getAttribute('data-project'));
 
 			
 			// //render tasks of selected project
