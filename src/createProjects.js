@@ -78,6 +78,62 @@ function createProjects() {
 	// loadProjects();
 
 
+	//create new Project
+	const project = (() => {
+		const createProject = (a) => {
+
+			//grab project name from input
+			// a = a.target.value;
+
+			const project = document.createElement('li');
+			project.classList.add('list-name');
+			project.setAttribute('data-project', a);
+			project.id = a;
+			const projectImg = document.createElement('img');
+			projectImg.classList.add('list-img');
+			projectImg.src = '../src/images/svg/list.svg';
+			projectImg.alt = 'list';
+			const deleteProjectButton = document.createElement('button');
+			deleteProjectButton.classList.add('deleteProjectBtn');
+			deleteProjectButton.innerText = 'X';
+			project.append(projectImg, a, deleteProjectButton);
+			projectsContainer.append(project);
+
+		};
+
+
+		return {
+			createProject,
+		};
+
+		
+	})();
+
+	//add event listener to create project when form is submitted
+	newProjectForm.addEventListener('submit', getProjectName);
+
+	//get project name from input and call createProject method
+	function getProjectName(event) {
+		event.preventDefault();
+		let projectName = projectInput.value;
+		project.createProject(projectName);
+		console.log(projectName);
+		return projectName;
+	}
+
+
+
+	// project.createProject(getProjectName());
+
+
+
+
+
+
+
+	// console.log(project.createProject(projectInput.value));
+
+
 
 }
 
