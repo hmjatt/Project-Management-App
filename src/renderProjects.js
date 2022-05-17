@@ -387,6 +387,104 @@ function renderProjects() {
 	// });
 
 
+	// create an IIFe to render selected project tasks
+	
+	const renderCurrentProject = (() => {
+
+		// when a project is clicked add class to it and remove it from other projects
+		const selectedProject = () => {
+			let allProjects = document.querySelectorAll('.list-name');
+			for (let project of allProjects) {
+				project.addEventListener('click', (e) => {
+					for (let project of allProjects) {
+						project.classList.remove('active-list');
+					}
+					project.classList.add('active-list');
+					projectTitle.innerText = project.getAttribute('data-project');
+					showTasks();
+				});
+			}
+
+		}
+
+
+		//create new task using taskInput and add it to the selected project and add it to local storage
+		const createNewTask = (taskName) => {
+			let project = document.querySelector('.active-list').getAttribute('data-project');
+			// console.log(project);
+
+			const task = document.createElement('div');
+			task.classList.add('task');
+			task.setAttribute('data-task', taskName);
+			task.setAttribute('data-project-name', project);
+			const taskInput = document.createElement('input');
+			taskInput.setAttribute('type', 'checkbox');
+			taskInput.setAttribute('id', taskName);
+			taskInput.setAttribute('data-task', taskName);
+			taskInput.classList.add('task-input');
+			// taskInput.id = taskName;
+			const taskLabel = document.createElement('label');
+			taskLabel.setAttribute('for', taskName);
+			taskLabel.classList.add('task-label');
+			taskLabel.setAttribute('data-content', taskName);
+			taskLabel.innerText = taskName;
+
+			task.append(taskInput, taskLabel);
+			tasksContainer.append(task);
+
+			
+		}
+
+		//when i click on a show tasks that had data-project-name equal to the project name
+		const showTasks = () => {
+
+			let project = document.querySelector('.active-list').getAttribute('data-project');
+			let tasks = document.querySelectorAll('.task');
+			for (let task of tasks) {
+				if (task.getAttribute('data-project-name') === project) {
+					
+					task.style.display = 'block';
+				} else {
+					task.style.display = 'none';
+				}
+				
+			}
+	
+		}
+		
+	return {
+		selectedProject,
+		createNewTask,
+		showTasks
+	}
+
+	})();
+
+	renderCurrentProject.selectedProject();
+
+
+
+	//create new task using taskInput and add it to the selected project
+	newTaskForm.addEventListener('submit', (e) => {
+		e.preventDefault();
+		let taskName = taskInput.value;
+		// if project exists in local storage or project name is empty, don't add it again
+		if (taskName !== '') {
+			// if project has a class of active-list then add task to that project
+			if (document.querySelector('.active-list')) {
+				renderCurrentProject.createNewTask(taskName);
+
+			}
+		}
+
+		taskInput.value = '';
+	});
+	
+
+
+
+
+
 	
 
 
