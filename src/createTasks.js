@@ -126,11 +126,66 @@ function createTasks() {
 
 
 
+	// create an IIFe to create tasks
+
+	const task = (() => {
+
+
+		//create new task using taskInput and add it to the selected project and add it to local storage
+		const createNewTask = (taskName) => {
+			let project = document.querySelector('.active-list').getAttribute('data-project');
+			// console.log(project);
+
+			const task = document.createElement('div');
+			task.classList.add('task');
+			task.setAttribute('data-task', taskName);
+			task.setAttribute('data-project-name', project);
+			const taskInput = document.createElement('input');
+			taskInput.setAttribute('type', 'checkbox');
+			taskInput.setAttribute('id', taskName);
+			taskInput.setAttribute('data-task', taskName);
+			taskInput.classList.add('task-input');
+			// taskInput.id = taskName;
+			const taskLabel = document.createElement('label');
+			taskLabel.setAttribute('for', taskName);
+			taskLabel.classList.add('task-label');
+			taskLabel.setAttribute('data-content', taskName);
+			taskLabel.innerText = taskName;
+
+			task.append(taskInput, taskLabel);
+			tasksContainer.append(task);
+
+			
+		}
+
+	
+
+	return {
+		createNewTask,
+	}
+
+	})();
+
+
 
 
 	
 	
-	
+	//create new task using taskInput and add it to the selected project
+	newTaskForm.addEventListener('submit', (e) => {
+		e.preventDefault();
+		let taskName = taskInput.value;
+		// if project exists in local storage or project name is empty, don't add it again
+		if (taskName !== '') {
+			// if project has a class of active-list then add task to that project
+			if (document.querySelector('.active-list')) {
+				task.createNewTask(taskName);
+
+			}
+		}
+
+		taskInput.value = '';
+	});
 
 
 }
