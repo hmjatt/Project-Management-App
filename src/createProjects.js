@@ -71,6 +71,7 @@ function createProjects() {
 					return;
 				} else {
 					createProject(project);
+					tasksContainer.style.display = 'block';
 				}
 			});
 
