@@ -115,7 +115,7 @@ function createProjects() {
 				};
 				let newProjectString = JSON.stringify(newProjectObj);
 				localStorage.setItem(newProject, newProjectString);
-				console.log(localStorage);
+				// console.log(localStorage);
 				projectInput.value = '';
 				loadProjects();
 			}
