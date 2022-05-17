@@ -155,8 +155,61 @@ function createTasks() {
 			task.append(taskInput, taskLabel);
 			tasksContainer.append(task);
 
+			//add task to local storage
+			addTask();
+
 			
 		}
+
+		// keep adding tasks to local storage
+		const addTask = () => {
+			let project = document.querySelector('.active-list').getAttribute('data-project');
+			let task = document.querySelector('.task-input').getAttribute('data-task');
+			let taskObj = {
+				task: task,
+			};
+			let taskString = JSON.stringify(taskObj);
+			localStorage.setItem(project, taskString);
+			console.log(localStorage)
+		}
+
+		// append tasks to the selected project
+
+
+
+
+		// const addTask = () => {
+		// 	let project = document.querySelector('.active-list').getAttribute('data-project');
+		// 	let taskName = taskInput.value;
+		// 	let taskObj = {
+		// 		taskName: taskName,
+		// 	};
+		// 	let taskString = JSON.stringify(taskObj);
+		// 	localStorage.setItem(project, taskString);
+		// 	document.querySelector('.task-input').value = '';
+		// 	console.log(localStorage);
+		// }
+		
+
+
+
+		// const addTask = () => {
+		// 	let projectName = document.querySelector('.active-list').getAttribute('data-project');
+		// 	let taskName = document.querySelector('.task-input').getAttribute('data-task');
+		// 	let taskObj = {
+		// 		taskName: taskName
+		// 	};
+		// 	let taskString = JSON.stringify(taskObj);
+		// 	localStorage.setItem(projectName, taskString);
+		// 	console.log(taskString);
+		// 	console.log(localStorage);
+		// }
+
+
+
+	
+
+
 
 	
 
