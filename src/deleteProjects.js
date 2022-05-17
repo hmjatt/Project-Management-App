@@ -9,24 +9,6 @@ document.addEventListener('DOMContentLoaded', DOMInterface);
 
 function deleteProject() {
 
-	//on pressing button delete project
-	
-	// document.body.addEventListener( 'click', function ( event ) {
-	// 	if( event.target.className == 'deleteProjectBtn' ) {
-
-	// 		//delete project from DOM
-	// 		event.target.parentElement.remove();
-
-	// 		// delete project from local storage
-	// 		localStorage.removeItem(event.target.parentElement.dataset.project);
-
-	// 		console.log(localStorage);
-	// 	};
-	// });
-
-
-	
-
 	// create IIFE to delete project
 
 	const deleteCurrentProject = (() => {
