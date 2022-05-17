@@ -21,9 +21,6 @@ function createTasks() {
 
 		//create new task using taskInput and add it to the selected project and add it to local storage
 		const createNewTask = (projectName, taskName) => {
-			// projectName = document.querySelector('.active-list').getAttribute('data-project');
-			// console.log(project);
-
 			const task = document.createElement('div');
 			task.classList.add('task');
 			task.setAttribute('data-task', taskName);
@@ -72,7 +69,7 @@ function createTasks() {
 			taskInput.value = '';
 			loadTasks();
 			
-			// console.log(localStorage)
+
 		}
 
 
@@ -80,13 +77,11 @@ function createTasks() {
 		//load tasks from local storage
 		const loadTasks = () => {
 		
-
 			let tasks = localStorage.getItem('tasks');
 			let tasksParsed = JSON.parse(tasks);
 
 			let arrayOfProjectNames = [];
 			let arrayOfTaskNames = [];
-
 
 			for (const [key, value] of Object.entries(tasksParsed)) {
 				let taskIndex = key;
@@ -96,14 +91,8 @@ function createTasks() {
 					let nameOfTask = taskName;
 					arrayOfProjectNames.push(nameOfProject);
 					arrayOfTaskNames.push(nameOfTask);
-
-					
-				
 			  	}
-				
-				
 			}
-			
 
 			for (let i = 0; i < arrayOfProjectNames.length; i++) {
 				//if task already exists, don't create it again
@@ -112,15 +101,7 @@ function createTasks() {
 				} else {
 					createNewTask(arrayOfProjectNames[i], arrayOfTaskNames[i]);
 				}
-
-
 			}
-
-
-
-			console.log(localStorage);
-
-
 		}
 
 

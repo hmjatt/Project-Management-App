@@ -45,7 +45,6 @@ function createProjects() {
 				};
 				let newProjectString = JSON.stringify(newProjectObj);
 				localStorage.setItem(newProject, newProjectString);
-				// console.log(localStorage);
 				projectInput.value = '';
 				loadProjects();
 			}
@@ -66,8 +65,6 @@ function createProjects() {
 			}
 			deleteByVal('tasks');
 
-
-			console.log(projects);
 			projects.forEach(function(project) {
 				//if project already exists, don't add it again
 				if (document.getElementById(project)) {
@@ -103,7 +100,6 @@ function createProjects() {
 			project.createProject(projectName);
 		}
 	
-		console.log(projectName);
 		return projectName;
 	}
 
