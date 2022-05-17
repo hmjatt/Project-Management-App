@@ -49,6 +49,11 @@ h2 {
 	margin-bottom: 0px;
 }
 
+.hidden {
+	
+	display: none
+}
+
 #container {
 	margin-right: -18%;
 	margin-top: 50px;

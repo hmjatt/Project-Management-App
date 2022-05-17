@@ -128,6 +128,16 @@ function createProjects() {
 
 		const loadProjects = () => {
 			let projects = Object.keys(localStorage);
+			// remove tasks key from projects variable
+			function deleteByVal(val) {
+				for (let key in projects) {
+					if (projects[key] == val) delete projects[key];
+				}
+			}
+			deleteByVal('tasks');
+
+
+			console.log(projects);
 			projects.forEach(function(project) {
 				//if project already exists, don't add it again
 				if (document.getElementById(project)) {
