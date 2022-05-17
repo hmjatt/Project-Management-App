@@ -35,6 +35,12 @@ function DOMInterface() {
 	gitLogo.classList.add('gitLogo');
 	gitLogoDiv.appendChild(gitLogo);
 
+
+	// DOM when page loads events
+	window.addEventListener('load', () => {
+		tasksContainer.style.display = 'none';
+	});
+
 	// DOM click events
 	inputMenu.addEventListener('click', addMargin);
 	inputMenu.addEventListener('click', hideH1);

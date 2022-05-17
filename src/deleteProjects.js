@@ -25,6 +25,7 @@ function deleteProject() {
 
 				// delete project from local storage
 				localStorage.removeItem(event.target.parentElement.dataset.project);
+				tasksContainer.style.display = 'none';
 
 				console.log(localStorage);
 			};

@@ -28,6 +28,7 @@ function renderProjects() {
 					for (let project of allProjects) {
 						if (project == e.target) {
 							project.classList.add('active-list');
+							
 						} else {
 							project.classList.remove('active-list');
 						}
@@ -51,7 +52,7 @@ function renderProjects() {
 			let tasks = document.querySelectorAll('.task');
 			for (let task of tasks) {
 				if (task.getAttribute('data-project-name') === project) {
-					
+					tasksContainer.style.display = 'block';
 					task.style.display = 'block';
 				} else {
 					task.style.display = 'none';
