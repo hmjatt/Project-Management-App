@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', DOMInterface);
 
 
 
-function renderTasks() {
+function deleteTasks() {
 
 	// // render tasks from local storage when project is selected
 	// let projects = Object.keys(localStorage);
@@ -18,4 +18,4 @@ function renderTasks() {
 
 }
 
-export default renderTasks;
+export default deleteTasks;

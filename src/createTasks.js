@@ -1,10 +1,10 @@
 import DOMInterface from './DOMInterface.js';
 // import createProjects from './createProjects.js';
 // import deleteProjects from './deleteProjects.js';
-import renderTasks from './renderTasks.js';
+// import renderTasks from './deleteTasks.js';
 
 document.addEventListener('DOMContentLoaded', DOMInterface);
-document.addEventListener('DOMContentLoaded', renderTasks);
+// document.addEventListener('DOMContentLoaded', renderTasks);
 // document.addEventListener('DOMContentLoaded', createProjects);
 // document.addEventListener('DOMContentLoaded', deleteProjects);
 
