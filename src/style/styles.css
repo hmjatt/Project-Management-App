@@ -12,9 +12,9 @@
 	--clr-nebula: #cbdbda;
 	--clr-completedTask: #a5b1c0;
 	--clr-delete: #ff494962;
-	--clr-highPriority: #ff8585;
-	--clr-mediumPriority: #ffdcb5;
-	--clr-lowPriority: #aaffaf;
+	--clr-highPriority: #ffc5c5;
+	--clr-mediumPriority: #ffe8cd;
+	--clr-lowPriority: #ceffd2;
 }
 
 html {
@@ -531,17 +531,6 @@ h2 {
 	font-size: 1.3em;
 }
 
-/* #priorityDiv{
-	all: initial;
-}
-
-#priorityDiv * {
-	all: unset;
-} */
-
-/* #priorityDiv input[type = "radio"] {
-	all: initial;
-} */
 
 .high-priority {
 	background-color: var(--clr-highPriority);

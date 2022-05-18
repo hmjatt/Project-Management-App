@@ -54,17 +54,17 @@ function createTasks() {
 			
 
 			//add task to local storage
-			addTask(projectName, taskName);
+			addTask(projectName, taskName, priority);
 
 			
 		}
 
 		// add tasks local storage
-		const addTask = (projectName, taskName) => {
+		const addTask = (projectName, taskName, priority) => {
 
 
 			let taskObj = {
-				[projectName] : taskName,
+				[projectName] : {taskName, priority}
 			}
 
 			//add task to selected project
@@ -75,6 +75,8 @@ function createTasks() {
 				let taskArray = [];
 				taskArray.push(taskObj);
 			}
+
+			// console.log(taskArray)
 
 			
 			
@@ -95,6 +97,7 @@ function createTasks() {
 
 			let arrayOfProjectNames = [];
 			let arrayOfTaskNames = [];
+			let arrayOfPriorities = [];
 
 			//if there are no tasks in local storage return
 			if(!tasksParsed) {
@@ -105,10 +108,18 @@ function createTasks() {
 					let task = value;
 					for (const [projectName, taskName] of Object.entries(task)) {
 						let nameOfProject = projectName;
-						let nameOfTask = taskName;
 						arrayOfProjectNames.push(nameOfProject);
-						arrayOfTaskNames.push(nameOfTask);
-					  }
+						let allTaskNames = taskName;
+						console.log(Object.values(allTaskNames)[1]);
+
+						let taskNames = Object.values(allTaskNames)[0];
+
+						let priority = Object.values(allTaskNames)[1];
+
+						arrayOfTaskNames.push(taskNames);
+						arrayOfPriorities.push(priority);
+
+					}
 				}
 	
 				for (let i = 0; i < arrayOfProjectNames.length; i++) {
@@ -116,7 +127,7 @@ function createTasks() {
 					if(document.querySelector(`[data-task="${arrayOfTaskNames[i]}"]`)) {
 						return;
 					} else {
-						createNewTask(arrayOfProjectNames[i], arrayOfTaskNames[i]);
+						createNewTask(arrayOfProjectNames[i], arrayOfTaskNames[i], arrayOfPriorities[i]);
 					}
 				}
 			}
