@@ -510,6 +510,7 @@ h2 {
 .task {
 	display: flex;
 	align-items: center;
+	/* justify-content: center; */
 	/* background-color: var(--clr-gallery); */
 	border: 1px solid var(--clr-primary);
 	margin: 2%;

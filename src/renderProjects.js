@@ -53,7 +53,7 @@ function renderProjects() {
 			for (let task of tasks) {
 				if (task.getAttribute('data-project-name') === project) {
 					tasksContainer.style.display = 'block';
-					task.style.display = 'block';
+					task.style.display = 'flex';
 				} else {
 					task.style.display = 'none';
 				}
