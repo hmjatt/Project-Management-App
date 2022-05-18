@@ -20,7 +20,7 @@ function createTasks() {
 		let taskArray = [];
 
 		//create new task using taskInput and add it to the selected project and add it to local storage
-		const createNewTask = (projectName, taskName) => {
+		const createNewTask = (projectName, taskName, priority) => {
 			const task = document.createElement('div');
 			task.classList.add('task');
 			task.setAttribute('data-task', taskName);
@@ -38,7 +38,20 @@ function createTasks() {
 			taskLabel.innerText = taskName;
 
 			task.append(taskInput, taskLabel);
+
+			if(priority === 'high') {
+				task.classList.add('high-priority');
+			} else if(priority === 'medium') {
+				task.classList.add('medium-priority');
+			} else if(priority === 'low') {
+				task.classList.add('low-priority');
+			}
+
+
 			tasksContainer.append(task);
+			tasksContainer.style.display = 'block';
+
+			
 
 			//add task to local storage
 			addTask(projectName, taskName);
@@ -83,25 +96,32 @@ function createTasks() {
 			let arrayOfProjectNames = [];
 			let arrayOfTaskNames = [];
 
-			for (const [key, value] of Object.entries(tasksParsed)) {
-				let taskIndex = key;
-				let task = value;
-				for (const [projectName, taskName] of Object.entries(task)) {
-					let nameOfProject = projectName;
-					let nameOfTask = taskName;
-					arrayOfProjectNames.push(nameOfProject);
-					arrayOfTaskNames.push(nameOfTask);
-			  	}
-			}
-
-			for (let i = 0; i < arrayOfProjectNames.length; i++) {
-				//if task already exists, don't create it again
-				if(document.querySelector(`[data-task="${arrayOfTaskNames[i]}"]`)) {
-					return;
-				} else {
-					createNewTask(arrayOfProjectNames[i], arrayOfTaskNames[i]);
+			//if there are no tasks in local storage return
+			if(!tasksParsed) {
+				return;
+			} else {
+				for (const [key, value] of Object.entries(tasksParsed)) {
+					let taskIndex = key;
+					let task = value;
+					for (const [projectName, taskName] of Object.entries(task)) {
+						let nameOfProject = projectName;
+						let nameOfTask = taskName;
+						arrayOfProjectNames.push(nameOfProject);
+						arrayOfTaskNames.push(nameOfTask);
+					  }
+				}
+	
+				for (let i = 0; i < arrayOfProjectNames.length; i++) {
+					//if task already exists, don't create it again
+					if(document.querySelector(`[data-task="${arrayOfTaskNames[i]}"]`)) {
+						return;
+					} else {
+						createNewTask(arrayOfProjectNames[i], arrayOfTaskNames[i]);
+					}
 				}
 			}
+
+			
 		}
 
 
@@ -115,21 +135,20 @@ function createTasks() {
 	})();
 
 
-
-
-	
-	
 	//create new task using taskInput and add it to the selected project
 	newTaskForm.addEventListener('submit', (e) => {
 		e.preventDefault();
 		let projectsName = document.querySelector('.active-list').getAttribute('data-project');
 		let tasksName = taskInput.value;
+		let taskPriority = priorities.value;
+
+
+		console.log(taskPriority);
 		// if project exists in local storage or project name is empty, don't add it again
 		if (tasksName !== '') {
 			// if project has a class of active-list then add task to that project
 			if (document.querySelector('.active-list')) {
-				task.createNewTask(projectsName, tasksName);
-
+				task.createNewTask(projectsName, tasksName, taskPriority);
 			}
 		}
 

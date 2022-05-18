@@ -82,7 +82,17 @@
 						<form data-new-task-form id="newTaskForm" action="">
 							<label id="taskLabel" for="taskName">Task Name</label><br>
 							<input type="text" class="new-task" id="taskInput" name="taskName"><br>
+							<div id="priorityDiv">
+								<label for="priority">Priority:</label>
+								<select name="priority" id="priorities">
+									<option value="high">High</option>
+									<option value="medium">Medium</option>
+									<option value="low">Low</option>
+								</select>
+								<br><br>
+							</div>
 							<input id="taskSubmitButton" class="new-task" type="submit" value="Create"><br>
+							
 						</form>
 					</div>
 	

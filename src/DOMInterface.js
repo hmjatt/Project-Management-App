@@ -26,6 +26,7 @@ function DOMInterface() {
 	let projectTitle = document.getElementById('projectTitle');
 	let newTaskForm = document.getElementById('newTaskForm');
 	let taskInput = document.getElementById('taskInput');
+	let getPriority = document.getElementById('priotities');
 
 
 	

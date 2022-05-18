@@ -12,6 +12,9 @@
 	--clr-nebula: #cbdbda;
 	--clr-completedTask: #a5b1c0;
 	--clr-delete: #ff494962;
+	--clr-highPriority: #ff8585;
+	--clr-mediumPriority: #ffdcb5;
+	--clr-lowPriority: #aaffaf;
 }
 
 html {
@@ -53,6 +56,9 @@ h2 {
 	
 	display: none
 }
+
+
+
 
 #container {
 	margin-right: -18%;
@@ -503,7 +509,7 @@ h2 {
 .task {
 	display: flex;
 	align-items: center;
-	background-color: var(--clr-gallery);
+	/* background-color: var(--clr-gallery); */
 	border: 1px solid var(--clr-primary);
 	margin: 2%;
 	padding: 2%;
@@ -523,6 +529,30 @@ h2 {
 
 #noTasks{
 	font-size: 1.3em;
+}
+
+/* #priorityDiv{
+	all: initial;
+}
+
+#priorityDiv * {
+	all: unset;
+} */
+
+/* #priorityDiv input[type = "radio"] {
+	all: initial;
+} */
+
+.high-priority {
+	background-color: var(--clr-highPriority);
+}
+
+.medium-priority {
+	background-color: var(--clr-mediumPriority);
+}
+
+.low-priority {
+	background-color: var(--clr-lowPriority);
 }
 
 .delete-stuff {
