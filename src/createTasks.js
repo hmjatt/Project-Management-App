@@ -1,4 +1,7 @@
 import DOMInterface from './DOMInterface.js';
+import { formatDistanceToNow, addDays} from 'date-fns'
+import parseISO from 'date-fns/parseISO'
+
 // import createProjects from './createProjects.js';
 // import deleteProjects from './deleteProjects.js';
 // import renderTasks from './deleteTasks.js';
@@ -20,7 +23,7 @@ function createTasks() {
 		let taskArray = [];
 
 		//create new task using taskInput and add it to the selected project and add it to local storage
-		const createNewTask = (projectName, taskName, priority) => {
+		const createNewTask = (projectName, taskName, priority, dueDate) => {
 			const task = document.createElement('div');
 			task.classList.add('task');
 			task.setAttribute('data-task', taskName);
@@ -35,7 +38,13 @@ function createTasks() {
 			taskLabel.setAttribute('for', taskName);
 			taskLabel.classList.add('task-label');
 			taskLabel.setAttribute('data-content', taskName);
-			taskLabel.innerText = taskName;
+			let dueDateConverted = parseISO(dueDate);
+			let dueDateFromNow = 'Due ' + formatDistanceToNow(dueDateConverted,{addSuffix: true});
+			taskLabel.innerText = taskName ;
+			let taskLabelSpan = document.createElement('span');
+			taskLabelSpan.classList.add('task-label-span');
+			taskLabelSpan.innerText = ' ( ' + dueDateFromNow + ' )';
+			taskLabel.appendChild(taskLabelSpan);
 
 			task.append(taskInput, taskLabel);
 
@@ -54,17 +63,17 @@ function createTasks() {
 			
 
 			//add task to local storage
-			addTask(projectName, taskName, priority);
+			addTask(projectName, taskName, priority, dueDate);
 
 			
 		}
 
 		// add tasks local storage
-		const addTask = (projectName, taskName, priority) => {
+		const addTask = (projectName, taskName, priority, dueDate) => {
 
 
 			let taskObj = {
-				[projectName] : {taskName, priority}
+				[projectName] : {taskName, priority, dueDate}
 			}
 
 			//add task to selected project
@@ -76,7 +85,7 @@ function createTasks() {
 				taskArray.push(taskObj);
 			}
 
-			// console.log(taskArray)
+			console.log(taskArray)
 
 			
 			
@@ -98,6 +107,7 @@ function createTasks() {
 			let arrayOfProjectNames = [];
 			let arrayOfTaskNames = [];
 			let arrayOfPriorities = [];
+			let arrayOfDueDates = [];
 
 			//if there are no tasks in local storage return
 			if(!tasksParsed) {
@@ -110,14 +120,17 @@ function createTasks() {
 						let nameOfProject = projectName;
 						arrayOfProjectNames.push(nameOfProject);
 						let allTaskNames = taskName;
-						console.log(Object.values(allTaskNames)[1]);
+						// console.log(Object.values(allTaskNames)[1]);
 
 						let taskNames = Object.values(allTaskNames)[0];
 
 						let priority = Object.values(allTaskNames)[1];
 
+						let dueDate = Object.values(allTaskNames)[2];
+
 						arrayOfTaskNames.push(taskNames);
 						arrayOfPriorities.push(priority);
+						arrayOfDueDates.push(dueDate);
 
 					}
 				}
@@ -127,7 +140,7 @@ function createTasks() {
 					if(document.querySelector(`[data-task="${arrayOfTaskNames[i]}"]`)) {
 						return;
 					} else {
-						createNewTask(arrayOfProjectNames[i], arrayOfTaskNames[i], arrayOfPriorities[i]);
+						createNewTask(arrayOfProjectNames[i], arrayOfTaskNames[i], arrayOfPriorities[i], arrayOfDueDates[i]);
 					}
 				}
 			}
@@ -152,6 +165,15 @@ function createTasks() {
 		let projectsName = document.querySelector('.active-list').getAttribute('data-project');
 		let tasksName = taskInput.value;
 		let taskPriority = priorities.value;
+		let dueDateValue = dueDate.value;
+		let dueDateConverted = parseISO(dueDateValue);
+		let dueDateFromNow = 'Due ' + formatDistanceToNow(dueDateConverted,{addSuffix: true});
+		console.log(dueDateValue);
+		console.log(dueDateConverted);
+		console.log(dueDateFromNow);
+
+		
+		// dueDate.min = new Date().toISOString().split("T")[0];
 
 
 		console.log(taskPriority);
@@ -159,7 +181,7 @@ function createTasks() {
 		if (tasksName !== '') {
 			// if project has a class of active-list then add task to that project
 			if (document.querySelector('.active-list')) {
-				task.createNewTask(projectsName, tasksName, taskPriority);
+				task.createNewTask(projectsName, tasksName, taskPriority, dueDateValue);
 			}
 		}
 
@@ -167,6 +189,9 @@ function createTasks() {
 	});
 
 	task.loadTasks();
+	// console.log(new Date().toISOString().split("T")[0]);
+
+	// console.log('Due ' + formatDistance(addDays(new Date(), 3), new Date(), { addSuffix: true }))
 
 
 }

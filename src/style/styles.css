@@ -15,6 +15,7 @@
 	--clr-highPriority: #ffc5c5;
 	--clr-mediumPriority: #ffe8cd;
 	--clr-lowPriority: #ceffd2;
+	--clr-dueDate: #878c92;
 }
 
 html {
@@ -542,6 +543,14 @@ h2 {
 
 .low-priority {
 	background-color: var(--clr-lowPriority);
+}
+
+.task-label-span {
+	font-size: 0.8em;
+	font-weight: 400;
+	padding: 0 0.45em 0;
+	user-select: none;
+	color: var(--clr-dueDate);
 }
 
 .delete-stuff {

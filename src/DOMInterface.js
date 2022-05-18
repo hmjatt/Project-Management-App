@@ -27,6 +27,9 @@ function DOMInterface() {
 	let newTaskForm = document.getElementById('newTaskForm');
 	let taskInput = document.getElementById('taskInput');
 	let getPriority = document.getElementById('priotities');
+	let dueDate = document.getElementById('dueDate');
+	dueDate.valueAsDate = new Date();
+	dueDate.min = new Date().toISOString().split("T")[0];
 
 
 	
