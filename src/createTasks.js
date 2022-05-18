@@ -155,6 +155,8 @@ function createTasks() {
 			
 		}
 
+		
+
 
 	return {
 		createNewTask,
@@ -175,7 +177,12 @@ function createTasks() {
 		let dueDateValue = dueDate.value;
 		// let dueDateConverted = parseISO(dueDateValue);
 		// let dueDateFromNow = 'Due ' + formatDistanceToNow(dueDateConverted,{addSuffix: true});
-		let isTaskChecked = false;
+		//if task have a class checked isTaskChecked = true
+		let isTaskChecked = taskInput.classList.contains('checked');
+		console.log(isTaskChecked);
+
+
+		// let isTaskChecked = false;
 
 		// if project exists in local storage or project name is empty, don't add it again
 		if (tasksName !== '') {
