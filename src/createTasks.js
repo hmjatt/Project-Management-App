@@ -23,7 +23,7 @@ function createTasks() {
 		let taskArray = [];
 
 		//create new task using taskInput and add it to the selected project and add it to local storage
-		const createNewTask = (projectName, taskName, priority, dueDate) => {
+		const createNewTask = (projectName, taskName, priority, dueDate, checked) => {
 			const task = document.createElement('div');
 			task.classList.add('task');
 			task.setAttribute('data-task', taskName);
@@ -33,6 +33,9 @@ function createTasks() {
 			taskInput.setAttribute('id', taskName);
 			taskInput.setAttribute('data-task', taskName);
 			taskInput.classList.add('task-input');
+			taskInput.checked = checked;
+
+			//if task has a class delete-task dont add it to the taskArray
 			// taskInput.id = taskName;
 			const taskLabel = document.createElement('label');
 			taskLabel.setAttribute('for', taskName);
@@ -63,17 +66,17 @@ function createTasks() {
 			
 
 			//add task to local storage
-			addTask(projectName, taskName, priority, dueDate);
+			addTask(projectName, taskName, priority, dueDate, checked);
 
 			
 		}
 
 		// add tasks local storage
-		const addTask = (projectName, taskName, priority, dueDate) => {
+		const addTask = (projectName, taskName, priority, dueDate, checked) => {
 
 
 			let taskObj = {
-				[projectName] : {taskName, priority, dueDate}
+				[projectName] : {taskName, priority, dueDate, checked}
 			}
 
 			//add task to selected project
@@ -85,7 +88,6 @@ function createTasks() {
 				taskArray.push(taskObj);
 			}
 
-			console.log(taskArray)
 
 			
 			
@@ -108,6 +110,7 @@ function createTasks() {
 			let arrayOfTaskNames = [];
 			let arrayOfPriorities = [];
 			let arrayOfDueDates = [];
+			let arrayOfChecked = [];
 
 			//if there are no tasks in local storage return
 			if(!tasksParsed) {
@@ -128,9 +131,13 @@ function createTasks() {
 
 						let dueDate = Object.values(allTaskNames)[2];
 
+						let checked = Object.values(allTaskNames)[3];
+
+
 						arrayOfTaskNames.push(taskNames);
 						arrayOfPriorities.push(priority);
 						arrayOfDueDates.push(dueDate);
+						arrayOfChecked.push(checked);
 
 					}
 				}
@@ -140,7 +147,7 @@ function createTasks() {
 					if(document.querySelector(`[data-task="${arrayOfTaskNames[i]}"]`)) {
 						return;
 					} else {
-						createNewTask(arrayOfProjectNames[i], arrayOfTaskNames[i], arrayOfPriorities[i], arrayOfDueDates[i]);
+						createNewTask(arrayOfProjectNames[i], arrayOfTaskNames[i], arrayOfPriorities[i], arrayOfDueDates[i], arrayOfChecked[i]);
 					}
 				}
 			}
@@ -166,22 +173,15 @@ function createTasks() {
 		let tasksName = taskInput.value;
 		let taskPriority = priorities.value;
 		let dueDateValue = dueDate.value;
-		let dueDateConverted = parseISO(dueDateValue);
-		let dueDateFromNow = 'Due ' + formatDistanceToNow(dueDateConverted,{addSuffix: true});
-		console.log(dueDateValue);
-		console.log(dueDateConverted);
-		console.log(dueDateFromNow);
+		// let dueDateConverted = parseISO(dueDateValue);
+		// let dueDateFromNow = 'Due ' + formatDistanceToNow(dueDateConverted,{addSuffix: true});
+		let isTaskChecked = false;
 
-		
-		// dueDate.min = new Date().toISOString().split("T")[0];
-
-
-		console.log(taskPriority);
 		// if project exists in local storage or project name is empty, don't add it again
 		if (tasksName !== '') {
 			// if project has a class of active-list then add task to that project
 			if (document.querySelector('.active-list')) {
-				task.createNewTask(projectsName, tasksName, taskPriority, dueDateValue);
+				task.createNewTask(projectsName, tasksName, taskPriority, dueDateValue, isTaskChecked);
 			}
 		}
 
@@ -189,9 +189,7 @@ function createTasks() {
 	});
 
 	task.loadTasks();
-	// console.log(new Date().toISOString().split("T")[0]);
 
-	// console.log('Due ' + formatDistance(addDays(new Date(), 3), new Date(), { addSuffix: true }))
 
 
 }

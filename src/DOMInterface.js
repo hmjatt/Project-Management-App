@@ -31,6 +31,9 @@ function DOMInterface() {
 	dueDate.valueAsDate = new Date();
 	dueDate.min = new Date().toISOString().split("T")[0];
 
+	//delete tasks
+	let clearBtn = document.getElementById('clearBtn');
+
 
 	
 	//git logo img
