@@ -29,17 +29,19 @@ An Application that let's you organize your Projects, Tasks and set their proior
 	- Local Storage
 	- date-fns Library
 
-
-
 ## Usage
 
 Run Dev Server (Port 5500)
 
     ```
-    npx webpack --watch
+    npm install
 
     ```
 
+    ```
+    npx webpack --watch
+
+    ```
 
 ### Links to content that helped me with this project
 
@@ -62,7 +64,6 @@ Run Dev Server (Port 5500)
 5. Date-Fns Library
 	- [Date-Fns Documentation](https://date-fns.org/v2.14.0/docs/Getting-Started)
 	- [Date-Fns FormatDistanceToNow](https://date-fns.org/v2.14.0/docs/formatDistanceToNow)
-
 
 
 #### Quote
