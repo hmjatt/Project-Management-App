@@ -1,21 +1,14 @@
 import DOMInterface from './DOMInterface.js';
-// import renderTasks from './renderTasks.js';
 import createProjects from './createProjects.js';
-// import deleteProjects from './deleteProjects.js';
 
 document.addEventListener('DOMContentLoaded', DOMInterface);
 document.addEventListener('DOMContentLoaded', createProjects);
-// document.addEventListener('DOMContentLoaded', deleteProjects);
-
-
 
 function renderProjects() {
 
 	// create an IIFe to render selected project tasks
 	
 	const renderCurrentProject = (() => {
-
-		// document.addEventListener('change', createProjects);
 
 		// when a project is clicked add class to it and remove it from other projects
 		const selectedProject = () => {
@@ -37,12 +30,8 @@ function renderProjects() {
 					}
 					showTasks();
 				}
-
 			});
-			
-
 		}
-
 
 
 		//when i click on a show tasks that had data-project-name equal to the project name
@@ -57,22 +46,17 @@ function renderProjects() {
 				} else {
 					task.style.display = 'none';
 				}
-				
 			}
-	
 		}
 		
 	return {
 		selectedProject,
-		// createNewTask,
 		showTasks
 	}
 
 	})();
 
 	renderCurrentProject.selectedProject();
-
-	
 }
 
 export default renderProjects;

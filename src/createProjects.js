@@ -1,12 +1,5 @@
 import DOMInterface from './DOMInterface.js';
-// import renderProjects from './renderProjects.js';
-// import deleteProjects from './deleteProjects.js';
-
 document.addEventListener('DOMContentLoaded', DOMInterface);
-// document.addEventListener('DOMContentLoaded', deleteProjects);
-
-
-
 
 function createProjects() {
 
@@ -34,7 +27,6 @@ function createProjects() {
 
 		// add new project to local storage
 		const addProject = () => {
-			// event.preventDefault();
 			//if input is empty, don't add project
 			if (projectInput.value === '') {
 				return;
@@ -48,13 +40,9 @@ function createProjects() {
 				projectInput.value = '';
 				loadProjects();
 			}
-		
 		}
 
-
 		//load projects from localStorage when page loads
-
-
 		const loadProjects = () => {
 			let projects = Object.keys(localStorage);
 			// remove tasks key from projects variable
@@ -77,14 +65,12 @@ function createProjects() {
 
 		}
 
-
 		return {
 			addProject,
 			loadProjects,
 			createProject
 		};
 
-		
 	})();
 
 	//add event listener to create project when form is submitted
@@ -100,14 +86,11 @@ function createProjects() {
 		} else {
 			project.createProject(projectName);
 		}
-	
 		return projectName;
 	}
 
 	//load projects from localStorage when page loads
 	project.loadProjects();
-
-
 }
 
 export default createProjects;

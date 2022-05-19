@@ -34,7 +34,6 @@ function DOMInterface() {
 	//delete tasks
 	let deleteBtn = document.getElementById('deleteBtn');
 
-
 	
 	//git logo img
 	let gitLogo = document.createElement('img');

@@ -1,18 +1,8 @@
 import DOMInterface from './DOMInterface.js';
-// import createProjects from './createProjects.js';
-// import deleteProjects from './deleteProjects.js';
-// import renderProjects from './renderProjects.js';
-// import createTasks from './createTasks.js';
-
 document.addEventListener('DOMContentLoaded', DOMInterface);
-// document.addEventListener('DOMContentLoaded', createProjects);
-// document.addEventListener('DOMContentLoaded', deleteProjects);
-
 
 
 function deleteTasks() {
-
-
 
 	// create IIFE to delete project
 
@@ -30,8 +20,6 @@ function deleteTasks() {
 
 				// delete all tasks from local storage
 				localStorage.removeItem('tasks');
-
-
 			};
 		});
 
@@ -45,8 +33,6 @@ function deleteTasks() {
 
 	deleteCurrentTask.deleteTask();
 	
-	
-
 }
 
 export default deleteTasks;

@@ -1,20 +1,10 @@
 import DOMInterface from './DOMInterface.js';
-import { formatDistanceToNow, addDays} from 'date-fns'
+import { formatDistanceToNow} from 'date-fns'
 import parseISO from 'date-fns/parseISO'
 
-// import createProjects from './createProjects.js';
-// import deleteProjects from './deleteProjects.js';
-// import renderTasks from './deleteTasks.js';
-
 document.addEventListener('DOMContentLoaded', DOMInterface);
-// document.addEventListener('DOMContentLoaded', renderTasks);
-// document.addEventListener('DOMContentLoaded', createProjects);
-// document.addEventListener('DOMContentLoaded', deleteProjects);
-
 
 function createTasks() {
-
-
 
 	// create an IIFe to create tasks
 
@@ -36,7 +26,6 @@ function createTasks() {
 			taskInput.checked = checked;
 
 			//if task has a class delete-task dont add it to the taskArray
-			// taskInput.id = taskName;
 			const taskLabel = document.createElement('label');
 			taskLabel.setAttribute('for', taskName);
 			taskLabel.classList.add('task-label');
@@ -49,13 +38,7 @@ function createTasks() {
 			taskLabelSpan.innerText = ' ( ' + dueDateFromNow + ' )';
 			taskLabel.appendChild(taskLabelSpan);
 
-			const deleteTaskBtn = document.createElement('button');
-			deleteTaskBtn.classList.add('deleteTaskBtn');
-			deleteTaskBtn.innerText = 'X';
-			deleteTaskBtn.setAttribute('data-task-delete', taskName);
-
-
-			task.append(taskInput, taskLabel, deleteTaskBtn);
+			task.append(taskInput, taskLabel);
 
 			if(priority === 'high') {
 				task.classList.add('high-priority');
@@ -65,46 +48,31 @@ function createTasks() {
 				task.classList.add('low-priority');
 			}
 
-
 			tasksContainer.append(task);
 			tasksContainer.style.display = 'block';
 
-			
-
 			//add task to local storage
 			addTask(projectName, taskName, priority, dueDate, checked);
-
-			
 		}
 
 		// add tasks local storage
 		const addTask = (projectName, taskName, priority, dueDate, checked) => {
 
-
 			let taskObj = {
 				[projectName] : {taskName, priority, dueDate, checked}
 			}
-
 			//add task to selected project
 			if(projectName) {
-				// let taskArray = [];
 				taskArray.push(taskObj);
 			} else {
 				let taskArray = [];
 				taskArray.push(taskObj);
 			}
 
-
-			
-			
 			localStorage.setItem('tasks', JSON.stringify(taskArray));
 			taskInput.value = '';
 			loadTasks();
-			
-
 		}
-
-
 
 		//load tasks from local storage
 		const loadTasks = () => {
@@ -132,13 +100,9 @@ function createTasks() {
 						// console.log(Object.values(allTaskNames)[1]);
 
 						let taskNames = Object.values(allTaskNames)[0];
-
 						let priority = Object.values(allTaskNames)[1];
-
 						let dueDate = Object.values(allTaskNames)[2];
-
 						let checked = Object.values(allTaskNames)[3];
-
 
 						arrayOfTaskNames.push(taskNames);
 						arrayOfPriorities.push(priority);
@@ -157,18 +121,12 @@ function createTasks() {
 					}
 				}
 			}
-
-			
 		}
-
-		
-
 
 	return {
 		createNewTask,
 		addTask,
 		loadTasks,
-		
 	}
 
 	})();
@@ -181,15 +139,7 @@ function createTasks() {
 		let tasksName = taskInput.value;
 		let taskPriority = priorities.value;
 		let dueDateValue = dueDate.value;
-		// let dueDateConverted = parseISO(dueDateValue);
-		// let dueDateFromNow = 'Due ' + formatDistanceToNow(dueDateConverted,{addSuffix: true});
-		//if task have a class checked isTaskChecked = true
 		let isTaskChecked = false;
-		// let isTaskChecked = taskInput.classList.contains('checked');
-		// console.log(isTaskChecked);
-
-
-		// let isTaskChecked = false;
 
 		// if project exists in local storage or project name is empty, don't add it again
 		if (tasksName !== '') {
@@ -203,8 +153,6 @@ function createTasks() {
 	});
 
 	task.loadTasks();
-
-
 
 }
 

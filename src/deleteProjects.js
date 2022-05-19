@@ -1,8 +1,5 @@
 import DOMInterface from './DOMInterface.js';
-// import renderProjects from './renderProjects.js';
-
 document.addEventListener('DOMContentLoaded', DOMInterface);
-// document.addEventListener('DOMContentLoaded', renderProjects);
 
 
 // create delete projects fxn
