@@ -28,7 +28,9 @@ function DOMInterface() {
 	let taskInput = document.getElementById('taskInput');
 	let getPriority = document.getElementById('priotities');
 	let dueDate = document.getElementById('dueDate');
-	dueDate.valueAsDate = new Date();
+	let getDate = new Date();
+	getDate.setDate(getDate.getDate() + 1);
+	dueDate.valueAsDate = getDate;
 	dueDate.min = new Date().toISOString().split("T")[0];
 
 	//delete tasks

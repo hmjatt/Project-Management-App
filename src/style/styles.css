@@ -20,7 +20,6 @@
 
 html {
 	font-family: 'Source Sans Pro', sans-serif;
-
 }
 
 body {
@@ -30,7 +29,6 @@ body {
 	color: var(--clr-mineShaft);
 	display: flex;
 	justify-content: center;
-	
 }
 
 h1 {
@@ -54,12 +52,8 @@ h2 {
 }
 
 .hidden {
-	
 	display: none
 }
-
-
-
 
 #container {
 	margin-right: -18%;
@@ -90,8 +84,6 @@ h2 {
 }
 
 #navContainer {
-	/* display: flex;
-	flex-direction: column; */
 	position: relative;
 	margin-bottom: 10vw;
 	grid-area: projects;
@@ -343,8 +335,6 @@ h2 {
 
 #taskList {
 	grid-area: tasks;
-	/* margin-bottom: 130vh; */
-	/* margin-top: 50vh; */
 }
 
 .todo-list {
@@ -436,7 +426,6 @@ h2 {
 	align-items: center;
 }
 
-
 #tasksContainer {
 	border-radius: 20px;
 	margin-bottom: 15px;
@@ -488,7 +477,6 @@ h2 {
 	font-weight: 400;
 	padding: 0 0.45em 0;
 	user-select: none;
-
 }
 
 #tasksContainer label::before {
@@ -510,8 +498,6 @@ h2 {
 .task {
 	display: flex;
 	align-items: center;
-	/* justify-content: center; */
-	/* background-color: var(--clr-gallery); */
 	border: 1px solid var(--clr-primary);
 	margin: 2%;
 	padding: 2%;
@@ -546,6 +532,14 @@ h2 {
 	background-color: var(--clr-lowPriority);
 }
 
+#priorities, #dueDate{
+	border-radius: 5px;
+}
+
+#priorities, #dueDate {
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
 .task-label-span {
 	font-size: 0.8em;
 	font-weight: 400;
@@ -553,10 +547,6 @@ h2 {
 	user-select: none;
 	color: var(--clr-dueDate);
 }
-
-/* .delete-task {
-	display: none;
-} */
 
 .delete-stuff {
 	display: flex;
@@ -575,10 +565,6 @@ h2 {
 	opacity: 0.8;
 }
 
-/* #clearBtn {
-	background-color: var(--clr-navHighlight);
-	color: var(--clr-mineShaft);
-} */
 
 #deleteBtn {
 	background-color: var(--clr-delete);
@@ -613,10 +599,4 @@ h2 {
 	}
 
 }
-
-/* @media (min-width: 1400px) {
-	.todo-list{
-		margin-top: 0em;
-	}
-} */
 
