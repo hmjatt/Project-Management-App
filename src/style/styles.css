@@ -575,10 +575,10 @@ h2 {
 	opacity: 0.8;
 }
 
-#clearBtn {
+/* #clearBtn {
 	background-color: var(--clr-navHighlight);
 	color: var(--clr-mineShaft);
-}
+} */
 
 #deleteBtn {
 	background-color: var(--clr-delete);

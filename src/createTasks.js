@@ -49,7 +49,13 @@ function createTasks() {
 			taskLabelSpan.innerText = ' ( ' + dueDateFromNow + ' )';
 			taskLabel.appendChild(taskLabelSpan);
 
-			task.append(taskInput, taskLabel);
+			const deleteTaskBtn = document.createElement('button');
+			deleteTaskBtn.classList.add('deleteTaskBtn');
+			deleteTaskBtn.innerText = 'X';
+			deleteTaskBtn.setAttribute('data-task-delete', taskName);
+
+
+			task.append(taskInput, taskLabel, deleteTaskBtn);
 
 			if(priority === 'high') {
 				task.classList.add('high-priority');
@@ -178,8 +184,9 @@ function createTasks() {
 		// let dueDateConverted = parseISO(dueDateValue);
 		// let dueDateFromNow = 'Due ' + formatDistanceToNow(dueDateConverted,{addSuffix: true});
 		//if task have a class checked isTaskChecked = true
-		let isTaskChecked = taskInput.classList.contains('checked');
-		console.log(isTaskChecked);
+		let isTaskChecked = false;
+		// let isTaskChecked = taskInput.classList.contains('checked');
+		// console.log(isTaskChecked);
 
 
 		// let isTaskChecked = false;

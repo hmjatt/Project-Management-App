@@ -32,7 +32,7 @@ function DOMInterface() {
 	dueDate.min = new Date().toISOString().split("T")[0];
 
 	//delete tasks
-	let clearBtn = document.getElementById('clearBtn');
+	let deleteBtn = document.getElementById('deleteBtn');
 
 
 	
