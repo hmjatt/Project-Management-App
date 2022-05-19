@@ -27,6 +27,7 @@ An Application that let's you organize your Projects, Tasks and set their proior
     - Asset Resource Loader
     - Source Maps
 	- Local Storage
+	- date-fns Library
 
 
 
@@ -58,8 +59,9 @@ Run Dev Server (Port 5500)
     - [Video From Web Dev Simplified](https://www.youtube.com/watch?v=W7FaYfuwu70)
     - [Code For the Video](https://github.com/kevin-powell/todo-list-collab/tree/master/javascript-finished)
 
-
-
+5. Date-Fns Library
+	- [Date-Fns Documentation](https://date-fns.org/v2.14.0/docs/Getting-Started)
+	- [Date-Fns FormatDistanceToNow](https://date-fns.org/v2.14.0/docs/formatDistanceToNow)
 
 
 

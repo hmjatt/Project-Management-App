@@ -94,10 +94,11 @@ function createTasks() {
 					let taskIndex = key;
 					let task = value;
 					for (const [projectName, taskName] of Object.entries(task)) {
+						
 						let nameOfProject = projectName;
 						arrayOfProjectNames.push(nameOfProject);
+
 						let allTaskNames = taskName;
-						// console.log(Object.values(allTaskNames)[1]);
 
 						let taskNames = Object.values(allTaskNames)[0];
 						let priority = Object.values(allTaskNames)[1];
