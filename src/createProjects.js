@@ -1,5 +1,6 @@
 import DOMInterface from './DOMInterface.js';
 document.addEventListener('DOMContentLoaded', DOMInterface);
+import projectImgIcon from './images/svg/list.svg';
 
 function createProjects() {
 
@@ -14,7 +15,8 @@ function createProjects() {
 			project.id = a;
 			const projectImg = document.createElement('img');
 			projectImg.classList.add('list-img');
-			projectImg.src = '../src/images/svg/list.svg';
+			// projectImg.src = '../src/images/svg/list.svg';
+			projectImg.src = projectImgIcon;
 			projectImg.alt = 'list';
 			const deleteProjectButton = document.createElement('button');
 			deleteProjectButton.classList.add('deleteProjectBtn');

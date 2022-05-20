@@ -1,4 +1,5 @@
 import gitImage from './images/git-logo.png';
+import tabIcon from './images/svg/list-tab.svg';
 
 function DOMInterface() {
 
