@@ -584,7 +584,7 @@ h2 {
 
 @media (min-width: 768px) {
 	.todo-list{
-		margin-top: 2em;
+		margin-top: 7em;
 	}
 }
 
@@ -594,19 +594,12 @@ h2 {
 		margin-left: 0%;
 	}
 
-}
-
-@media (min-width: 1200px) {
-	#container {
-		margin-right: 0%;
-		margin-left: 0%;
-	}
-
 	.todo-list{
-		margin-top: -2em;
+		margin-top: 7em;
 	}
 
 }
+
 
 @media (min-width: 1800px) {
 	#container {
@@ -615,7 +608,7 @@ h2 {
 	}
 
 	.todo-list{
-		margin-top: -7em;
+		margin-top: 2em;
 	}
 
 }
