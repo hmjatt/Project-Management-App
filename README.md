@@ -8,7 +8,7 @@ An Application that let's you organize your Projects, Tasks and set their proior
 ![This is an image](https://github.com/hmjatt/hmjatt.github.io/blob/master/images/Project%20mgmt%20app.png)
 
 
-<!-- [Live Preview]() -->
+[Live Preview](https://hmjatt.github.io/Project-Management-App/)
 
 
 
