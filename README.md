@@ -1,7 +1,7 @@
 # Project-Manager-App
 
 
-An Application that let's you organize your Projects, Tasks and set their proiority, due date and save them to localstorage.This project is created to practice Object-Oriented Programming Principles in JavaScript. Feel free to reach me at [Twitter](https://twitter.com/hmjatt/)
+An Application that let's you organize your Projects, Tasks and set their proiority, due date and save them to localstorage. This project is created to practice Object-Oriented Programming Principles in JavaScript using Webpack as a module bundler. Feel free to reach me at [Twitter](https://twitter.com/hmjatt/)
 
 
 
