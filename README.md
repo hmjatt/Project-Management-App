@@ -1,21 +1,18 @@
 # Project-Manager-App
 
 
-An Application that let's you organize your Projects, Tasks and set their proiority, due date and save them to localstorage. This project is created to practice Object-Oriented Programming Principles in JavaScript using Webpack as a module bundler. Feel free to reach me at [Twitter](https://twitter.com/hmjatt/)
-
-
-
 ![This is an image](https://github.com/hmjatt/hmjatt.github.io/blob/master/images/Project%20mgmt%20app.png)
+
+
+An Application that let's you organize your Projects, Tasks and set their proiority, due date and save them to localstorage. This project is created to practice Object-Oriented Programming Principles in JavaScript using Webpack as a module bundler. Feel free to reach me at [Twitter](https://twitter.com/hmjatt/)
 
 
 [Live Preview](https://hmjatt.github.io/Project-Management-App/)
 
 
-
 ### Technologies Used
 
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="50" height="50"/> </a>  &emsp;   <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="50" height="50"/> </a>  &emsp;   <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="50" height="50"/> </a>
-
 
 
 <a href="https://webpack.js.org/" target="_blank" rel="noreferrer"> <img style="margin-top:40px;" src="https://raw.githubusercontent.com/webpack/media/master/logo/logo-on-dark-bg.svg" alt="webpack" width="180" height="100"/> </a>  &emsp;   <a href="https://www.npmjs.com/" target="_blank" rel="noreferrer"> <img style="margin-top:20px;" src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" alt="npm" width="120" height="70"/> </a>
