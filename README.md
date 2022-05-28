@@ -63,6 +63,18 @@ Run Dev Server (Port 5500)
 	- [Date-Fns FormatDistanceToNow](https://date-fns.org/v2.14.0/docs/formatDistanceToNow)
 
 
+
+### Future Changes/Fixes
+
+1. When adding a new Task, Task Name should be added as a value in localStorage, where key is the Project Name.
+
+2. When a project is completed, it should be updated/checked in localStorage, ({Key: "isItChecked", Value: "checked"}).
+
+3. Find a better way to organize the the projects and tasks in localStorage, make better use of Object key value pairs.
+
+4. Could arrays replace objects?, or is it better to use objects? Find out.
+
+
 #### Quote
 
     “You can't cross the sea merely by standing and staring at the water.”
