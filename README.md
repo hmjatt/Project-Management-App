@@ -40,7 +40,7 @@ Run Dev Server (Port 5500)
 
     ```
 
-### Links to content that helped me with this project
+## Links to content that helped me with this project
 
 1. OOP in JavaScript
     - [Guide to OOP in JS](https://betterprogramming.pub/object-oriented-programming-in-javascript-b3bda28d3e81)
@@ -64,15 +64,15 @@ Run Dev Server (Port 5500)
 
 
 
-### Future Changes/Fixes
+## Future Changes/Fixes
 
-1. When adding a new Task, Task Name should be added as a value in localStorage, where key is the Project Name.
+	1. When adding a new Task, Task Name should be added as a value in localStorage, where key is the Project Name.
 
-2. When a project is completed, it should be updated/checked in localStorage, ({Key: "isItChecked", Value: "checked"}).
+	2. When a project is completed, it should be updated/checked in localStorage, ({Key: "isItChecked", Value: "checked"}).
 
-3. Find a better way to organize the the projects and tasks in localStorage, make better use of Object key value pairs.
+	3. Find a better way to organize the the projects and tasks in localStorage, make better use of Object key value pairs.
 
-4. Could arrays replace objects?, or is it better to use objects? Find out.
+	4. Could arrays replace objects?, or is it better to use objects? Find out.
 
 
 #### Quote
