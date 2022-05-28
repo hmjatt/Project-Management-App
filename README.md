@@ -74,6 +74,15 @@ Run Dev Server (Port 5500)
 
 	4. Could arrays replace objects?, or is it better to use objects? Find out.
 
+	5. Add a feature that shows Tasks remaining in a Project(Using Numbers i.e,"3 Tasks Remaining").
+
+	6. Add a feature that removes only the completed tasks from localStorage and Selected Project.
+
+	7. Add a feature that automatically arrange the Tasks based on priority(Highest priority on Top).
+
+	8. Add a feature that alerts(Using Bell Icon) the user about Tasks Due Today.
+
+
 
 #### Quote
 
