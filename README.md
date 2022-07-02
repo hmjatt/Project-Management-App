@@ -1,13 +1,12 @@
 # Project-Manager-App
 
+## [Live Preview](https://hmjatt.github.io/Project-Management-App/)
+
 
 ![This is an image](https://github.com/hmjatt/hmjatt.github.io/blob/master/images/Project%20mgmt%20app.png)
 
 
 An Application that let's you organize your Projects, Tasks and set their proiority, due date and save them to localstorage. This project is created to practice Object-Oriented Programming Principles in JavaScript using Webpack as a module bundler. Feel free to reach me at [Twitter](https://twitter.com/hmjatt/)
-
-
-[Live Preview](https://hmjatt.github.io/Project-Management-App/)
 
 
 ### Technologies Used
