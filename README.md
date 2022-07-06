@@ -65,6 +65,8 @@ Run Dev Server (Port 5500)
 
 ## Future Changes/Fixes
 
+**Change IIFE to Factory Functions because if we need ONE of something use an IIFE. If we need multiples of something, create them with factories**
+
 	1. When adding a new Task, Task Name should be added as a value in localStorage, where key is the Project Name.
 
 	2. When a project is completed, it should be updated/checked in localStorage, ({Key: "isItChecked", Value: "checked"}).
